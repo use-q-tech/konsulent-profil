@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="da">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Qadeer Ashraf - IT Consultant Profile</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#197fe6",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a242f",
+                        "subtle-light": "#f0f4f8",
+                        "subtle-dark": "#16202a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased transition-colors duration-200">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="size-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined">person</span>
+            </div>
+            <span class="text-lg font-bold tracking-tight">Qadeer Ashraf</span>
+          </div>
+          
+          <div class="hidden md:flex items-center gap-8">
+              <a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#overblik">Overblik</a>
+              <a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#roller">Roller</a>
+              <a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#matrix">Matrix</a>
+              <a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#profil">Profil</a>
+          </div>
+
+          <button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all shadow-sm hover:shadow-md flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">download</span>
+            Download CV
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="w-full flex flex-col items-center">
+        <!-- Hero -->
+        <section class="w-full max-w-5xl px-6 py-16 lg:py-24 flex flex-col gap-10" id="overblik">
+          <div class="flex flex-col-reverse lg:flex-row gap-12 items-start lg:items-center">
+            <div class="flex-1 space-y-6">
+              <span class="inline-flex items-center rounded-full bg-blue-50 dark:bg-blue-900/30 px-3 py-1 text-xs font-semibold text-primary ring-1 ring-inset ring-blue-700/10">
+                IT-KONSULENT
+              </span>
+              <h1 class="text-4xl lg:text-5xl font-black tracking-tight leading-[1.1] text-slate-900 dark:text-white">
+                KONSULENTOVERBLIK – <br />
+                <span class="text-slate-500 dark:text-slate-400">LEDELSE MED TEKNISK BESLUTNINGSKRAFT</span>
+              </h1>
+              <p class="text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+                Senior IT-konsulent med fokus på ledelse og strategisk eksekvering. Jeg bygger bro mellem forretningsmål og komplekse tekniske løsninger.
+              </p>
+              <div class="flex flex-wrap gap-4 pt-2">
+                <div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                  <span class="material-symbols-outlined text-[20px]">location_on</span>
+                  København, Danmark
+                </div>
+                <div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                  <span class="material-symbols-outlined text-[20px]">language</span>
+                  Dansk & Engelsk
+                </div>
+              </div>
+            </div>
+            <div class="relative shrink-0">
+              <div class="w-48 h-48 lg:w-64 lg:h-64 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-slate-900/5 dark:ring-white/10 bg-surface-light dark:bg-surface-dark">
+                <img
+                  class="w-full h-full object-cover"
+                  alt="Professional headshot"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbBi3cCd2pm76Hta6-PtJoijQkQb9fFsBZ56pw4wI-KCJ-KprEftHOGqV-dCG9Rh3M1URr081t4RE6DxiykaDQEDws4re39QyM7KVLdLYUfdWa7m7kHQCJGM84xJZ7u0r2VURgPAvTHxEpNl5PsMlpJ4kXyW3Cy_fVfOLbfA1RkWmLbxa3HDFU_fHn9MaUKrs8kjA2d2gMV8mdRe7_oFB75mwZtt-p4Y4EoPG3khVIFXhKCXRxz_VZT6QoQ9yKlui9CYAfjpTwcLs"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Experience -->
+        <div class="w-full max-w-5xl px-6 pb-20">
+          <div class="grid md:grid-cols-2 gap-6 mt-8">
+            <!-- Baggrund -->
+            <div class="bg-surface-light dark:bg-surface-dark p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-primary">
+                  <span class="material-symbols-outlined">history_edu</span>
+                </div>
+                <h2 class="text-xl font-bold">Baggrund</h2>
+              </div>
+              <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                Jeg har en sjælden kombination af:
+              </p>
+              <ul class="space-y-3">
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary shrink-0 mt-0.5">check_circle</span>
+                    <span class="text-slate-600 dark:text-slate-300">20+ års IT-erfaring</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary shrink-0 mt-0.5">check_circle</span>
+                    <span class="text-slate-600 dark:text-slate-300">Reel ledelses- og leveranceansvar</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary shrink-0 mt-0.5">check_circle</span>
+                    <span class="text-slate-600 dark:text-slate-300">Jeg har etableret og ledet en ART (6 teams, ~55 medarbejdere) med ansvar for centrale fagsystemer, tekniske platforme og komplekse integrationer på tværs af organisationen.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary shrink-0 mt-0.5">check_circle</span>
+                    <span class="text-slate-600 dark:text-slate-300">Erfaring fra offentlig sektor og regulerede miljøer</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary shrink-0 mt-0.5">check_circle</span>
+                    <span class="text-slate-600 dark:text-slate-300">Tidligere freelancer (vant til at tage ansvar fra dag 1)</span>
+                  </li>
+              </ul>
+            </div>
+
+            <!-- Min differentiering -->
+            <div class="bg-surface-light dark:bg-surface-dark p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-primary">
+                  <span class="material-symbols-outlined">stars</span>
+                </div>
+                <h2 class="text-xl font-bold">Min differentiering</h2>
+              </div>
+              
+              <p class="text-slate-600 dark:text-slate-300 mb-4">
+                Jeg arbejder med teknisk overblik, beslutningskraft og sparring – ikke udførsel.
+              </p>
+              
+              <p class="text-slate-900 dark:text-white font-medium mb-3">
+                Det er netop her, jeg adskiller mig fra:
+              </p>
+              
+              <ul class="space-y-3 mb-6">
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-slate-400 shrink-0 mt-0.5">remove</span>
+                    <span class="text-slate-600 dark:text-slate-300">rene RTE’er og delivery-profiler uden teknisk forståelse</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-slate-400 shrink-0 mt-0.5">remove</span>
+                    <span class="text-slate-600 dark:text-slate-300">rene ledere uden IT-dybde og arkitektonisk indsigt</span>
+                  </li>
+              </ul>
+
+              <div class="mt-auto bg-primary/5 dark:bg-primary/10 rounded-xl p-4 border border-primary/10 dark:border-primary/20">
+                <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                    <span class="text-lg">👉</span> Resultat:
+                </h3>
+                <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                    Organisationer får én ansvarsbærende leder, der både kan tage styring på flow og træffe kvalificerede tekniske beslutninger – uden at trække arbejdet ned i implementering.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Roles -->
+        <div class="w-full border-t border-slate-200 dark:border-slate-800"></div>
+        <section class="w-full max-w-5xl px-6 py-20 flex flex-col gap-16" id="roller">
+            
+            <!-- Primære konsulentroller -->
+            <div>
+              <h2 class="text-3xl font-bold mb-10 text-slate-900 dark:text-white flex items-center gap-3">
+                <span>🎯</span> Primære konsulentroller (det jeg bør sælges på)
+              </h2>
+              
+              <div class="grid md:grid-cols-2 gap-6">
+                
+                <!-- 1. RTE -->
+                <div class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl border border-primary/20 ring-1 ring-primary/10 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+                        Mit absolut stærkeste match
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">1️⃣ Release Train Engineer (RTE) / Senior Delivery Lead</h3>
+                    
+                    <div class="mt-6">
+                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Når organisationer bruger mig</h4>
+                        <ul class="space-y-1.5 mb-4">
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> ART’er er ustabile</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Leverancer er uforudsigelige</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Mange afhængigheder på tværs af teams og leverandører</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Ledelsen ønsker ro, overblik og klar fremdrift</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-4">
+                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Jeg bidrager med</h4>
+                        <ul class="space-y-1.5 mb-4">
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> End-to-end ansvar for flow og leverancesikkerhed</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> PI Planning, afhængighedsstyring og governance</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Tæt samarbejde med Business Owners, ledelse og leverandører</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Stabilisering, prioritering og løbende forbedring</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-6 bg-blue-50/50 dark:bg-blue-900/10 p-3 rounded-lg border border-blue-100 dark:border-blue-900/20">
+                        <p class="text-sm font-medium text-slate-900 dark:text-white">
+                            <span class="text-primary mr-1">👉</span> Konsulenthus-værdi
+                        </p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 italic mt-1">
+                            “Vi kan sende ham ud uden risiko – han tager ansvar.”
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. Delivery Manager -->
+                <div class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">2️⃣ Senior Delivery Manager / Program Manager</h3>
+                    
+                    <div class="mt-4">
+                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Når rollen opstår</h4>
+                        <ul class="space-y-1.5 mb-4">
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Flere teams leverer mod samme mål</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Program-setup er uklart eller umodent</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Forretning og IT er i konflikt</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-4">
+                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Jeg bidrager med</h4>
+                        <ul class="space-y-1.5 mb-4">
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Koordinering og overblik på tværs</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Prioritering og fremdrift</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Oversættelse mellem forretning, IT og teknik</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-6 bg-slate-50 dark:bg-slate-800/50 p-3 rounded-lg">
+                        <p class="text-sm text-slate-600 dark:text-slate-300">
+                            <span class="text-primary mr-1">👉</span> Bruges ofte, når SAFe ikke er fuldt implementeret – men behovet for styring er der.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. Product Manager -->
+                <div class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">3️⃣ Product Manager / Product Lead</h3>
+                    <p class="text-sm font-semibold text-primary mb-4">Meget stærk sekundær rolle</p>
+                    
+                    <div class="mt-4">
+                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Når organisationer mangler</h4>
+                        <ul class="space-y-1.5 mb-4">
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Klar produktretning</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Prioritering under pres</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Sammenhæng mellem strategi og leverancer</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-4">
+                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Jeg bidrager med</h4>
+                        <ul class="space-y-1.5 mb-4">
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Vision og roadmap</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Prioritering på tværs af teams og initiativer</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Tæt stakeholder-alignment</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 4. Teamleder -->
+                <div class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">4️⃣ Teamleder / IT-leder</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">(især i offentlig sektor)</p>
+                    
+                    <div class="mt-4">
+                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Jeg kan</h4>
+                        <ul class="space-y-1.5 mb-4">
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Gå ind hurtigt i vakancer eller reorganiseringer</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Skabe struktur, retning og trivsel</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Tage både personale- og leveranceansvar</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-6 bg-slate-50 dark:bg-slate-800/50 p-3 rounded-lg">
+                        <p class="text-sm text-slate-600 dark:text-slate-300">
+                            <span class="text-primary mr-1">👉</span> Særligt velegnet ved organisatoriske forandringer.
+                        </p>
+                    </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="w-full border-t border-slate-200 dark:border-slate-800"></div>
+
+            <!-- Teknisk ledelse -->
+            <div>
+                <div class="mb-10">
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3">
+                        <span>🧩</span> Teknisk ledelse – korrekt afgrænset (meget vigtig)
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 mt-2">
+                        Tekniske roller, jeg kan varetage<br/>
+                        Disse roller bruges, når organisationen har brug for teknisk ledelse og beslutningsstøtte – ikke ekstra hænder.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    
+                    <!-- Tech Delivery Lead -->
+                    <div class="bg-subtle-light dark:bg-subtle-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">🔹 Technical Delivery Lead</h3>
+                        
+                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Når organisationen bruger mig</h4>
+                        <ul class="space-y-1.5 mb-4">
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Teknisk komplekse løsninger</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Mange integrationer og afhængigheder</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Arkitekturbeslutninger mangler ejerskab</li>
+                        </ul>
+
+                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Jeg bidrager med</h4>
+                        <ul class="space-y-1.5">
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Teknisk overblik og prioritering</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Kvalificerede beslutninger om arkitektur og teknisk gæld</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Samspil mellem arkitekter, teams, leverandører og ledelse</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tech Product Mgr -->
+                    <div class="bg-subtle-light dark:bg-subtle-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">🔹 Technical Product Manager / Technical Product Lead</h3>
+                        
+                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Når rollen giver mening</h4>
+                        <ul class="space-y-1.5 mb-4">
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Platforme, fagsystemer og integrationslandskaber</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Offentlig sektor (legacy + modernisering)</li>
+                        </ul>
+
+                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Jeg bidrager med</h4>
+                        <ul class="space-y-1.5 mb-4">
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Teknisk roadmap</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Prioritering af teknisk vs. forretningsværdi</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Stakeholder-dialog og konsekvensvurdering</li>
+                        </ul>
+
+                        <p class="text-xs text-slate-500 dark:text-slate-500 mt-4 border-t border-slate-200 dark:border-slate-700 pt-2">
+                            <span class="text-primary mr-1">👉</span> Afgrænsning: roadmap og beslutninger – ikke backlog og implementering.
+                        </p>
+                    </div>
+
+                    <!-- Architect -->
+                    <div class="bg-subtle-light dark:bg-subtle-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">🔹 Solution / Domain Architect (advisory)</h3>
+                        
+                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Kun i rådgivende form</h4>
+                        <ul class="space-y-1.5 mb-4">
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Arkitektur-review</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Sparring på designvalg</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Risiko- og konsekvensvurderinger</li>
+                        </ul>
+
+                        <p class="text-xs text-slate-500 dark:text-slate-500 mt-4 border-t border-slate-200 dark:border-slate-700 pt-2">
+                            <span class="text-primary mr-1">👉</span> Ingen design-til-implementering, ingen kodning.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Cautionary Roles -->
+            <div class="w-full bg-red-50 dark:bg-red-900/10 p-6 rounded-xl border border-red-100 dark:border-red-900/20">
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                    <span>⛔</span> Roller – kun hvis det bliver en nødvendighed
+                </h3>
+                <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+                    <ul class="space-y-1">
+                        <li class="text-sm text-slate-700 dark:text-slate-300 flex items-center gap-2"><span class="text-red-400">•</span> Teknisk Scrum Master (single teams / teams)</li>
+                        <li class="text-sm text-slate-700 dark:text-slate-300 flex items-center gap-2"><span class="text-red-400">•</span> Teknisk Product Owner</li>
+                    </ul>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 italic border-t md:border-t-0 md:border-l border-red-200 dark:border-red-800/30 pt-2 md:pt-0 md:pl-4">
+                        <span class="text-primary mr-1">👉</span> Tages kun ved særlige behov og med tydeligt mandat og afgrænsning.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Matrix -->
+        <section class="w-full bg-surface-light dark:bg-surface-dark border-y border-slate-200 dark:border-slate-800 py-24" id="matrix">
+          <div class="max-w-5xl mx-auto px-6">
+            <div class="mb-12 text-center md:text-left">
+              <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Role Fit Matrix – Konsulentprofil</h2>
+              <p class="text-lg text-slate-600 dark:text-slate-300 max-w-3xl">
+                Konsulenthus-venlig rolleoversigt. Denne matrix er designet til hurtigt at afklare, hvor min profil skaber størst værdi i forhold til jeres kunders behov.
+              </p>
+            </div>
+            <div class="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm bg-white dark:bg-background-dark">
+              <table class="w-full text-left border-collapse">
+                <thead class="bg-slate-50 dark:bg-slate-800/50">
+                  <tr>
+                    <th class="p-5 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider border-b border-slate-200 dark:border-slate-700">Rolle</th>
+                    <th class="p-5 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider border-b border-slate-200 dark:border-slate-700 text-right">Egnethed</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-sm">
+                    <!-- Release Train Engineer -->
+                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                        <td class="p-5 font-medium text-slate-900 dark:text-white">Release Train Engineer</td>
+                        <td class="p-5 text-right text-amber-500 tracking-widest text-base">⭐⭐⭐⭐⭐</td>
+                    </tr>
+                    <!-- Senior Delivery Lead -->
+                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors bg-slate-50/50 dark:bg-slate-800/20">
+                        <td class="p-5 font-medium text-slate-900 dark:text-white">Senior Delivery Lead</td>
+                        <td class="p-5 text-right text-amber-500 tracking-widest text-base">⭐⭐⭐⭐⭐</td>
+                    </tr>
+                    <!-- Program Manager -->
+                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                        <td class="p-5 font-medium text-slate-900 dark:text-white">Program Manager</td>
+                        <td class="p-5 text-right text-amber-500 tracking-widest text-base">⭐⭐⭐⭐<span class="text-slate-300 dark:text-slate-600">☆</span></td>
+                    </tr>
+                    <!-- Product Manager / Product Lead -->
+                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors bg-slate-50/50 dark:bg-slate-800/20">
+                        <td class="p-5 font-medium text-slate-900 dark:text-white">Product Manager / Product Lead</td>
+                        <td class="p-5 text-right text-amber-500 tracking-widest text-base">⭐⭐⭐⭐<span class="text-slate-300 dark:text-slate-600">☆</span></td>
+                    </tr>
+                    <!-- Technical Delivery Lead (non-coding) -->
+                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                        <td class="p-5 font-medium text-slate-900 dark:text-white">Technical Delivery Lead (non-coding)</td>
+                        <td class="p-5 text-right text-amber-500 tracking-widest text-base">⭐⭐⭐⭐<span class="text-slate-300 dark:text-slate-600">☆</span></td>
+                    </tr>
+                    <!-- Technical Product Lead -->
+                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors bg-slate-50/50 dark:bg-slate-800/20">
+                        <td class="p-5 font-medium text-slate-900 dark:text-white">Technical Product Lead</td>
+                        <td class="p-5 text-right text-amber-500 tracking-widest text-base">⭐⭐⭐⭐<span class="text-slate-300 dark:text-slate-600">☆</span></td>
+                    </tr>
+                    <!-- Agile Coach (ART/ledelse) -->
+                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                        <td class="p-5 font-medium text-slate-900 dark:text-white">Agile Coach (ART/ledelse)</td>
+                        <td class="p-5 text-right text-amber-500 tracking-widest text-base">⭐⭐⭐⭐<span class="text-slate-300 dark:text-slate-600">☆</span></td>
+                    </tr>
+                    <!-- Interim Teamleder / IT-leder -->
+                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors bg-slate-50/50 dark:bg-slate-800/20">
+                        <td class="p-5 font-medium text-slate-900 dark:text-white">Interim Teamleder / IT-leder</td>
+                        <td class="p-5 text-right text-amber-500 tracking-widest text-base">⭐⭐⭐⭐<span class="text-slate-300 dark:text-slate-600">☆</span></td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Profile Deep Dive -->
+        <section class="w-full max-w-5xl px-6 py-24 flex flex-col gap-12" id="profil">
+          <div class="border-l-4 border-primary pl-6">
+            <h2 class="text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Konsulentprofil</h2>
+            <p class="text-lg text-slate-500 dark:text-slate-400 mt-2">Dybdegående indsigt i arbejdsmetoder og værdiskabelse</p>
+          </div>
+
+          <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Profil Text -->
+            <div class="lg:col-span-2 space-y-8">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Profil</h3>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                  Jeg er senior freelance konsulent med 20+ års erfaring inden for IT og 10+ års erfaring med ledelse, governance og leveranceansvar. Jeg arbejder i krydsfeltet mellem ledelse, teknik og forretning og hjælper organisationer med at skabe overblik, stabilitet og fremdrift i komplekse IT- og digitaliseringsinitiativer.
+                </p>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                  Jeg påtager mig typisk roller som Release Train Engineer, Senior Delivery Lead, interim Product Manager samt tekniske ledelsesroller på advisory-niveau (Technical Delivery Lead / Technical Product Lead). Jeg har særlig erfaring fra offentlig sektor og regulerede miljøer, hvor tekniske beslutninger har store organisatoriske og forretningsmæssige konsekvenser.
+                </p>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Min tekniske baggrund gør mig i stand til at træffe kvalificerede tekniske beslutninger, vurdere arkitekturvalg og prioritere teknisk gæld – uden selv at stå for implementering. Jeg fungerer som beslutningstager, sparringspartner og bindeled mellem arkitekter, teams, leverandører og ledelse.
+                </p>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Sådan skaber jeg værdi</h3>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="p-4 rounded-xl bg-subtle-light dark:bg-subtle-dark border border-slate-100 dark:border-slate-800">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span class="material-symbols-outlined text-primary">grid_view</span>
+                        <h4 class="font-bold text-slate-900 dark:text-white">Ro & Struktur</h4>
+                      </div>
+                      <p class="text-sm text-slate-600 dark:text-slate-400">Skaber ro og struktur i pressede leverance-setup</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-subtle-light dark:bg-subtle-dark border border-slate-100 dark:border-slate-800">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span class="material-symbols-outlined text-primary">gavel</span>
+                        <h4 class="font-bold text-slate-900 dark:text-white">Beslutningskraft</h4>
+                      </div>
+                      <p class="text-sm text-slate-600 dark:text-slate-400">Træffer klare beslutninger på både ledelses- og teknisk niveau</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-subtle-light dark:bg-subtle-dark border border-slate-100 dark:border-slate-800">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span class="material-symbols-outlined text-primary">directions</span>
+                        <h4 class="font-bold text-slate-900 dark:text-white">Eksekvering</h4>
+                      </div>
+                      <p class="text-sm text-slate-600 dark:text-slate-400">Oversætter strategi og arkitektur til eksekverbar retning</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-subtle-light dark:bg-subtle-dark border border-slate-100 dark:border-slate-800">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span class="material-symbols-outlined text-primary">handshake</span>
+                        <h4 class="font-bold text-slate-900 dark:text-white">Brobygning</h4>
+                      </div>
+                      <p class="text-sm text-slate-600 dark:text-slate-400">Sikrer fælles forståelse mellem forretning, IT og leverandører</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-subtle-light dark:bg-subtle-dark border border-slate-100 dark:border-slate-800 sm:col-span-2">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span class="material-symbols-outlined text-primary">shield</span>
+                        <h4 class="font-bold text-slate-900 dark:text-white">Effekt & Risiko</h4>
+                      </div>
+                      <p class="text-sm text-slate-600 dark:text-slate-400">Fokus på effekt, risiko og langsigtet bæredygtighed</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Typiske opgaver Sidebar -->
+            <div class="lg:col-span-1">
+              <div class="bg-primary/5 dark:bg-primary/10 rounded-2xl p-6 border border-primary/10 dark:border-primary/20 sticky top-24">
+                <h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2">
+                  <span class="material-symbols-outlined">assignment</span>
+                  Typiske opgaver
+                </h3>
+                <ul class="space-y-4">
+                    <li class="flex gap-3 text-sm text-slate-700 dark:text-slate-300">
+                      <span class="bg-white dark:bg-slate-800 p-1 rounded shadow-sm text-primary shrink-0 h-fit">
+                        <span class="material-symbols-outlined text-[16px] block">arrow_right_alt</span>
+                      </span>
+                      Etablering og stabilisering af ART’er og multi-team setup
+                    </li>
+                    <li class="flex gap-3 text-sm text-slate-700 dark:text-slate-300">
+                      <span class="bg-white dark:bg-slate-800 p-1 rounded shadow-sm text-primary shrink-0 h-fit">
+                        <span class="material-symbols-outlined text-[16px] block">arrow_right_alt</span>
+                      </span>
+                      End-to-end flow, governance og leverancesikkerhed
+                    </li>
+                    <li class="flex gap-3 text-sm text-slate-700 dark:text-slate-300">
+                      <span class="bg-white dark:bg-slate-800 p-1 rounded shadow-sm text-primary shrink-0 h-fit">
+                        <span class="material-symbols-outlined text-[16px] block">arrow_right_alt</span>
+                      </span>
+                      PI Planning og afhængighedsstyring
+                    </li>
+                    <li class="flex gap-3 text-sm text-slate-700 dark:text-slate-300">
+                      <span class="bg-white dark:bg-slate-800 p-1 rounded shadow-sm text-primary shrink-0 h-fit">
+                        <span class="material-symbols-outlined text-[16px] block">arrow_right_alt</span>
+                      </span>
+                      Stakeholder- og leverandørledelse (onshore/offshore)
+                    </li>
+                    <li class="flex gap-3 text-sm text-slate-700 dark:text-slate-300">
+                      <span class="bg-white dark:bg-slate-800 p-1 rounded shadow-sm text-primary shrink-0 h-fit">
+                        <span class="material-symbols-outlined text-[16px] block">arrow_right_alt</span>
+                      </span>
+                      Interim ansvar for produktretning, roadmap og prioritering
+                    </li>
+                    <li class="flex gap-3 text-sm text-slate-700 dark:text-slate-300">
+                      <span class="bg-white dark:bg-slate-800 p-1 rounded shadow-sm text-primary shrink-0 h-fit">
+                        <span class="material-symbols-outlined text-[16px] block">arrow_right_alt</span>
+                      </span>
+                      Teknisk ledelse og beslutningsstøtte i komplekse løsninger
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="w-full bg-surface-light dark:bg-surface-dark border-t border-slate-200 dark:border-slate-800 pt-16 pb-8">
+          <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="inline-flex flex-col items-center gap-4 mb-8">
+              <div class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-2">
+                <span class="material-symbols-outlined text-2xl">mail</span>
+              </div>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Klar til en uforpligtende dialog?</h2>
+              <p class="text-slate-500 dark:text-slate-400">Kontakt mig for at høre nærmere om tilgængelighed og match.</p>
+              <div class="flex gap-4 mt-2">
+                <button class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-semibold transition-all">Kontakt mig</button>
+                <button class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-900 dark:text-white px-6 py-3 rounded-lg font-semibold transition-all">Hent CV</button>
+              </div>
+            </div>
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500 dark:text-slate-400">
+              <p>© 2026 Qadeer Ashraf. Alle rettigheder forbeholdes.</p>
+              <div class="flex gap-6 mt-4 md:mt-0">
+                <!-- <a class="hover:text-primary transition-colors" href="#">LinkedIn</a> -->
+                <!-- <a class="hover:text-primary transition-colors" href="#">Privatlivspolitik</a> -->
+              </div>
+            </div>
+          </div>
+        </footer>
+    </main>
+
+</body>
+</html>
