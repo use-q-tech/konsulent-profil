@@ -39,6 +39,19 @@
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Modal Animation */
+        dialog[open] {
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        dialog::backdrop {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(4px);
+        }
     </style>
 <script type="importmap">
 {
@@ -69,9 +82,9 @@
               <a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#profil">Profil</a>
           </div>
 
-          <button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all shadow-sm hover:shadow-md flex items-center gap-2">
-            <span class="material-symbols-outlined text-[18px]">download</span>
-            Download CV
+          <button onclick="openCV()" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all shadow-sm hover:shadow-md flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">visibility</span>
+            Se fuldt CV
           </button>
         </div>
       </div>
@@ -775,7 +788,7 @@
               <p class="text-slate-500 dark:text-slate-400">Kontakt mig for at høre nærmere om tilgængelighed og match.</p>
               <div class="flex gap-4 mt-2">
                 <button class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-semibold transition-all">Kontakt mig</button>
-                <button class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-900 dark:text-white px-6 py-3 rounded-lg font-semibold transition-all">Hent CV</button>
+                <button onclick="openCV()" class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-900 dark:text-white px-6 py-3 rounded-lg font-semibold transition-all">Hent CV</button>
               </div>
             </div>
             <div class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500 dark:text-slate-400">
@@ -788,6 +801,329 @@
           </div>
         </footer>
     </main>
+
+    <!-- CV Modal -->
+    <dialog id="cv-modal" class="fixed inset-0 z-[100] w-full h-full p-0 m-0 bg-transparent backdrop:bg-slate-900/60 overflow-hidden">
+        <div class="w-full h-full flex items-center justify-center p-4 sm:p-6 lg:p-8">
+            <div class="w-full max-w-6xl h-full max-h-full bg-white dark:bg-surface-dark rounded-2xl shadow-2xl flex flex-col border border-slate-200 dark:border-slate-700 relative overflow-hidden">
+                
+                <!-- Modal Header -->
+                <div class="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-700 bg-white/90 dark:bg-surface-dark/90 backdrop-blur-md sticky top-0 z-10">
+                    <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">description</span>
+                        Fuldt CV
+                    </h2>
+                    <div class="flex items-center gap-2">
+                        <button onclick="window.print()" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800">
+                            <span class="material-symbols-outlined text-[18px]">print</span>
+                            Print
+                        </button>
+                        <button onclick="closeCV()" class="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                            <span class="material-symbols-outlined">close</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Modal Content (Scrollable) -->
+                <div class="overflow-y-auto flex-1 p-6 lg:p-10 bg-slate-50 dark:bg-background-dark/50">
+                    <div class="max-w-5xl mx-auto grid lg:grid-cols-3 gap-8 lg:gap-12">
+                        
+                        <!-- Left Column (Main Content) -->
+                        <div class="lg:col-span-2 space-y-12">
+                            
+                            <!-- Header Info -->
+                            <div>
+                                <h1 class="text-3xl font-black text-slate-900 dark:text-white mb-1">PROFESSIONEL PROFIL</h1>
+                                <p class="text-lg text-primary font-bold mb-6">Strategisk og menneskefokuseret leder</p>
+                                <div class="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 space-y-4">
+                                    <p>Jeg er en leder med passion for at udvikle stærke teams og kulturer, hvor samarbejde, retning og energi går hånd i hånd. Jeg trives, når jeg kan omsætte strategi til handling og skabe rammer, hvor mennesker lykkes sammen – med fokus på læring, trivsel og fælles ansvar.</p>
+                                    <p>Med en solid teknisk forståelse og organisatorisk indsigt har jeg ledet tværfaglige udviklingsteams og samarbejdet tæt med både forretning og leverandører. Jeg motiveres af at bygge bro mellem mennesker, skabe klar kommunikation og sikre alignment på tværs af organisationen.</p>
+                                    <p>Jeg er kendt for at skabe tillid gennem nærvær og tydelighed – og for at samle mennesker omkring fælles mål, hvor faglighed, samarbejde og læringskultur er drivkraften bag resultaterne</p>
+                                </div>
+                            </div>
+
+                            <!-- Description -->
+                            <div class="bg-white dark:bg-surface-dark p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm">
+                                <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-primary">person</span>
+                                    BESKRIVELSE AF MIG
+                                </h2>
+                                <div class="text-slate-600 dark:text-slate-300 space-y-3">
+                                    <p>Jeg er en udadvendt og nysgerrig person med en naturlig evne til at skabe relationer og samarbejde på tværs.</p>
+                                    <p>Jeg trives i miljøer, hvor videndeling, humor og fælles ansvar er en del af hverdagen, og jeg går til opgaver med både struktur og omtanke.</p>
+                                    <p>Jeg formidler viden på en klar og tilgængelig måde og værdsætter, når forskellige perspektiver mødes og bliver til fælles løsninger.</p>
+                                </div>
+                            </div>
+
+                            <!-- Leadership Experience -->
+                            <div>
+                                <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2 pb-2 border-b border-slate-200 dark:border-slate-800">
+                                    <span class="material-symbols-outlined text-primary">military_tech</span>
+                                    LEDERERFARING
+                                </h2>
+                                <ul class="space-y-4 text-slate-600 dark:text-slate-300">
+                                    <li class="flex gap-3">
+                                        <span class="text-primary font-bold">📈</span>
+                                        <span>+10 års erfaring med ledelse inden for IT og digital udvikling – med fokus på teamopbygning, kultur og organisatorisk forankring.</span>
+                                    </li>
+                                    <li class="flex gap-3">
+                                        <span class="text-primary font-bold">🧑‍🤝‍🧑</span>
+                                        <span>Opbygning og udvikling af tværfaglige teams i Danmark, Polen, Ukraine, Indien og Thailand – med vægt på samarbejde, trivsel og fælles retning.</span>
+                                    </li>
+                                    <li class="flex gap-3">
+                                        <span class="text-primary font-bold">🎯</span>
+                                        <span>Kultur- og forandringsledelse – skaber læringskultur, ejerskab og motivation gennem tillid, tydelighed og fælles ansvar.</span>
+                                    </li>
+                                    <li class="flex gap-3">
+                                        <span class="text-primary font-bold">🤝</span>
+                                        <span>Stakeholder management og leverandørsamarbejde – sikrer klar kommunikation, alignment og stærke relationer mellem forretning, IT og eksterne partnere.</span>
+                                    </li>
+                                    <li class="flex gap-3">
+                                        <span class="text-primary font-bold">🌍</span>
+                                        <span>Strategisk kommunikation og governance – skaber struktur, fremdrift og gennemsigtighed i komplekse organisationer uden at miste nærvær og menneskelig balance.</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Work Experience Timeline -->
+                            <div>
+                                <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-2 pb-2 border-b border-slate-200 dark:border-slate-800">
+                                    <span class="material-symbols-outlined text-primary">work</span>
+                                    ERHVERVSERFARING
+                                </h2>
+                                
+                                <div class="space-y-12 border-l-2 border-slate-100 dark:border-slate-800 ml-3 pl-8 relative">
+                                    
+                                    <!-- Job 1 -->
+                                    <div class="relative">
+                                        <div class="absolute -left-[41px] top-1.5 size-5 bg-primary rounded-full ring-4 ring-white dark:ring-surface-dark"></div>
+                                        <div class="mb-2">
+                                            <span class="text-sm font-bold text-primary tracking-wide uppercase">03-2022 – nu</span>
+                                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1">Release Train Engineer & interim Product Manager</h3>
+                                            <p class="text-slate-500 font-medium">Ministeriet for Grøn Trepart – Styrelsen for Grøn Arealomlægning og vandmiljø</p>
+                                        </div>
+                                        <div class="text-slate-600 dark:text-slate-300 space-y-4">
+                                            <p>Som RTE har jeg det overordnede ansvar for at lede og koordinere System ART’en – en afdeling, der omfatter centrale fagsystemer, tekniske platforme og komplekse integrationer på tværs af forretningen. Jeg var med til at etablere ART’en, der i dag består af omkring 55 medarbejdere – fordelt på fem agile teams med en blanding af interne medarbejdere, eksterne konsulenter og leverandørressourcer (onshore/offshore).</p>
+                                            <p>En væsentlig del af ansvaret er at sikre effektivt samarbejde, governance og interessenthåndtering på tværs af teams – så både interne interessenter, leverandører og forretningsområder arbejder mod fælles mål med fokus på kvalitet, stabil drift og løbende forbedring.</p>
+                                            <p>I en periode har jeg desuden fungeret som interim Product Manager med ansvar for vision, prioritering og sammenhæng mellem strategi, værdiskabelse og leverancer.</p>
+                                            
+                                            <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-lg mt-4">
+                                                <h4 class="font-bold text-slate-900 dark:text-white mb-2 text-sm uppercase">Resultater og fokusområder:</h4>
+                                                <ul class="space-y-2 text-sm">
+                                                    <li><span class="font-semibold text-slate-700 dark:text-slate-200">Kultur og samarbejde:</span> Skabt en åben samarbejdskultur, hvor 5 teams arbejder efter fælles mål og gennemsigtig kommunikation med både leverandører og interne interessenter.</li>
+                                                    <li><span class="font-semibold text-slate-700 dark:text-slate-200">Governance og fremdrift:</span> Etableret faste PI-kadence og klare afhængighedsfora, der har styrket fremdriften og øget forudsigeligheden i leverancerne.</li>
+                                                    <li><span class="font-semibold text-slate-700 dark:text-slate-200">Stakeholder management:</span> Etableret faste dialogfora med Business Owners, leverandører og ledelse, hvilket har skabt fælles forståelse, hurtigere beslutningsveje og stærkere alignment på tværs af organisationen.</li>
+                                                    <li><span class="font-semibold text-slate-700 dark:text-slate-200">Teamudvikling:</span> Opbygget et fælles mindset for kontinuerlig læring og ejerskab, hvilket har øget engagementet og mindsket tværgående flaskehalse.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Job 2 -->
+                                    <div class="relative">
+                                        <div class="absolute -left-[41px] top-1.5 size-5 bg-slate-200 dark:bg-slate-700 rounded-full ring-4 ring-white dark:ring-surface-dark"></div>
+                                        <div class="mb-2">
+                                            <span class="text-sm font-bold text-slate-500 tracking-wide uppercase">05-2019 – 02-2022</span>
+                                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1">Teamleder med personaleledelse (10 medarbejdere)</h3>
+                                            <p class="text-slate-500 font-medium">Finn Frogne A/S, Ishøj Software & Hardware løsninger til taxa- og passagertransport</p>
+                                        </div>
+                                        <div class="text-slate-600 dark:text-slate-300 space-y-4">
+                                            <p>Som teamleder havde jeg det overordnede ansvar for tre agile udviklingsteams – et app-team, et frontend-team og et backend-team – som jeg var med til at etablere og opbygge fra bunden. Jeg samlede specialister med forskellige fagligheder og skabte en fælles retning præget af samarbejde, ejerskab og løbende læring.</p>
+                                            <p>Jeg arbejdede tæt sammen med forretningen og eksterne leverandører for at skabe sammenhæng mellem udvikling, drift og kundeløsninger, og jeg satte struktur på dialogen gennem klare prioriteter og forventningsafstemning.</p>
+                                            
+                                            <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-lg mt-4">
+                                                <h4 class="font-bold text-slate-900 dark:text-white mb-2 text-sm uppercase">Resultater og fokusområder:</h4>
+                                                <ul class="space-y-2 text-sm">
+                                                    <li><span class="font-semibold text-slate-700 dark:text-slate-200">Teamopbygning og kultur:</span> Etablerede tre tværfaglige teams med klare roller og ansvar, hvilket styrkede samarbejdet og øgede kvaliteten i leverancerne.</li>
+                                                    <li><span class="font-semibold text-slate-700 dark:text-slate-200">Agil transformation:</span> Implementerede Scrum som fælles arbejdsmetode og forankrede en kultur med transparens, feedback og kontinuerlig forbedring.</li>
+                                                    <li><span class="font-semibold text-slate-700 dark:text-slate-200">Personaleledelse:</span> Udviklede medarbejdernes kompetencer gennem løbende coaching og klare udviklingsmål – med høj trivsel og lav udskiftning som resultat.</li>
+                                                    <li><span class="font-semibold text-slate-700 dark:text-slate-200">Interessentsamarbejde:</span> Skabte tætte relationer til både interne forretningsområder og eksterne leverandører, hvilket forbedrede planlægning, prioritering og forventningsstyring på tværs.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Job 3 -->
+                                    <div class="relative">
+                                        <div class="absolute -left-[41px] top-1.5 size-5 bg-slate-200 dark:bg-slate-700 rounded-full ring-4 ring-white dark:ring-surface-dark"></div>
+                                        <div class="mb-2">
+                                            <span class="text-sm font-bold text-slate-500 tracking-wide uppercase">05-2017 – 04-2019</span>
+                                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1">Freelance konsulent</h3>
+                                            <p class="text-slate-500 font-medium">Finn Frogne A/S, Ishøj - Software & Hardware løsninger til taxa- og passagertransport</p>
+                                        </div>
+                                        <div class="text-slate-600 dark:text-slate-300">
+                                            <p>Som IT-arkitekt og fullstack-udvikler arbejdede jeg med design og implementering af løsninger, fra moderne frontend-applikationer over API’er til backend-komponenter. Jeg udviklede løsninger, der fulgte den overordnede arkitektur, var genanvendelige og driftssikre, og jeg tog ansvar for hele udviklingsforløbet fra koncept til produktion. Rollen omfattede både hands-on udvikling og beslutninger omkring arkitektur, hvilket sikrede stabile, skalerbare og langsigtede leverancer.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Job 4 -->
+                                    <div class="relative">
+                                        <div class="absolute -left-[41px] top-1.5 size-5 bg-slate-200 dark:bg-slate-700 rounded-full ring-4 ring-white dark:ring-surface-dark"></div>
+                                        <div class="mb-2">
+                                            <span class="text-sm font-bold text-slate-500 tracking-wide uppercase">01-2012 – 04-2017</span>
+                                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1">Scrum Master & Softwareudvikler</h3>
+                                            <p class="text-slate-500 font-medium">SDC-Scandinavian Data Center - Softwareløsninger til banker</p>
+                                        </div>
+                                        <div class="text-slate-600 dark:text-slate-300">
+                                            <p>Scrum Master og udvikler havde jeg ansvar for at facilitere agile processer og sikre samarbejde mellem arkitektur, udvikling og test. Jeg koordinerede desuden arbejdet med polske udviklingsressourcer i tværgående teams og sikrede klar kommunikation og fælles fremdrift på tværs af lokationer.</p>
+                                            <p class="mt-2">Jeg arbejdede med løbende forbedring af teamets samarbejde, kvalitet og leveranceevne – og bidrog til at forankre Scrum som fælles arbejdsmetode på tværs af afdelingen.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Job 5 -->
+                                    <div class="relative">
+                                        <div class="absolute -left-[41px] top-1.5 size-5 bg-slate-200 dark:bg-slate-700 rounded-full ring-4 ring-white dark:ring-surface-dark"></div>
+                                        <div class="mb-2">
+                                            <span class="text-sm font-bold text-slate-500 tracking-wide uppercase">03-2010 – 12-2011</span>
+                                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1">Freelance konsulent</h3>
+                                            <p class="text-slate-500 font-medium">SDC-Scandinavian Data Center, Ballerup – Softwareløsninger til banker</p>
+                                        </div>
+                                        <div class="text-slate-600 dark:text-slate-300">
+                                            <p>Som IT-arkitekt og udvikler udviklede jeg løsninger i overensstemmelse med SDC’s overordnede arkitektur og tekniske standarder. Jeg stod for design og implementering af backend-komponenter og genanvendelige biblioteker, samtidig med at jeg sikrede robusthed, skalerbarhed og stabil drift i et forretningskritisk miljø.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Job 6 -->
+                                    <div class="relative">
+                                        <div class="absolute -left-[41px] top-1.5 size-5 bg-slate-200 dark:bg-slate-700 rounded-full ring-4 ring-white dark:ring-surface-dark"></div>
+                                        <div class="mb-2">
+                                            <span class="text-sm font-bold text-slate-500 tracking-wide uppercase">01-2008 – 02-2010</span>
+                                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1">Softwareudvikler med faglig ledelse</h3>
+                                            <p class="text-slate-500 font-medium">Groupcare A/S, København - Softwareløsninger til medlemsorganisationer</p>
+                                        </div>
+                                        <div class="text-slate-600 dark:text-slate-300">
+                                            <p>Som softwareudvikler havde jeg det tekniske ansvar for leverancerne fra et offshore-team i Dhaka, Bangladesh. Jeg fungerede som faglig leder og bindeled mellem udviklingsteamet og de danske kunder – med fokus på kvalitet, samarbejde og kundetilfredshed.</p>
+                                            <p class="mt-2">Jeg varetog koordinering og prioritering af opgaver for offshore-teamet, sikrede klare forventninger og stabile leverancer i høj kvalitet. Samtidig samarbejdede jeg tæt med de danske produktansvarlige for at skabe fælles forståelse og videndeling på tværs af geografiske og kulturelle grænser.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Job 7 -->
+                                    <div class="relative">
+                                        <div class="absolute -left-[41px] top-1.5 size-5 bg-slate-200 dark:bg-slate-700 rounded-full ring-4 ring-white dark:ring-surface-dark"></div>
+                                        <div class="mb-2">
+                                            <span class="text-sm font-bold text-slate-500 tracking-wide uppercase">08-2001 – 12-2008</span>
+                                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1">Softwareudvikler – Fastansat konsulent</h3>
+                                            <p class="text-slate-500 font-medium">BluePhoenix Solutions, Ballerup – Konsulentbistand til bankapplikationer</p>
+                                        </div>
+                                        <div class="text-slate-600 dark:text-slate-300">
+                                            <p>Som softwareudvikler arbejdede jeg med udvikling, implementering og vedligehold af forretningskritiske løsninger i samarbejde med kolleger og kunder. Jeg koordinerede desuden udviklingsopgaver med offshore-teams i Indien og deltog i opstarten og oplæringen af et nyt indisk udviklingsteam på 20 medarbejdere.</p>
+                                            <p class="mt-2">Opgaven krævede tydelig kommunikation, kulturel forståelse og evne til at skabe samarbejde og kvalitet på tværs af geografiske afstande</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column (Sidebar) -->
+                        <div class="space-y-8">
+                            
+                            <!-- Education -->
+                            <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-tactile">
+                                <h3 class="text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4">UDDANNELSE</h3>
+                                <ul class="space-y-6">
+                                    <li>
+                                        <div class="font-bold text-slate-900 dark:text-white">IT-Universitetet i København</div>
+                                        <div class="text-sm text-slate-600 dark:text-slate-400">Kandidatuddannelse i informationsteknologi – specialisering i Internet- og softwareteknologi</div>
+                                        <div class="text-xs text-slate-400 font-mono mt-1">08/2003 – 09/2005</div>
+                                    </li>
+                                    <li>
+                                        <div class="font-bold text-slate-900 dark:text-white">BUSINESS COLLEGE BALLERUP</div>
+                                        <div class="text-sm text-slate-600 dark:text-slate-400">DIPLOMA IN ADVANCED COMPUTER SCIENCE</div>
+                                        <div class="text-xs text-slate-400 font-mono mt-1">08/1998 – 11/2000</div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Certifications -->
+                            <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-tactile">
+                                <h3 class="text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4">CERTIFICERING</h3>
+                                <ul class="space-y-4">
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-0.5 text-[20px]">verified</span>
+                                        <div class="text-sm text-slate-700 dark:text-slate-300">
+                                            <strong>PAL-EBM</strong> – Professional Agile Leadership (Evidence-Based Management) Scrum.org
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-0.5 text-[20px]">verified</span>
+                                        <div class="text-sm text-slate-700 dark:text-slate-300">
+                                            <strong>SPS</strong> – Scaled Professional Scrum, Scrum.org
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-0.5 text-[20px]">verified</span>
+                                        <div class="text-sm text-slate-700 dark:text-slate-300">
+                                            <strong>Certified SAFe® 6 Agilist</strong> Scaled Agile Inc.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-0.5 text-[20px]">verified</span>
+                                        <div class="text-sm text-slate-700 dark:text-slate-300">
+                                            <strong>Certified SAFe® 5 Agilist</strong> Scaled Agile Inc.
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-0.5 text-[20px]">verified</span>
+                                        <div class="text-sm text-slate-700 dark:text-slate-300">
+                                            <strong>PSM II/I</strong> – Professional Scrum Master Scrum.org
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-0.5 text-[20px]">verified</span>
+                                        <div class="text-sm text-slate-700 dark:text-slate-300">
+                                            <strong>PSPO II/I</strong> – Professional Scrum Product Owner Scrum.org
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Languages -->
+                            <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-tactile">
+                                <h3 class="text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4">SPROG</h3>
+                                <ul class="space-y-2">
+                                    <li class="flex justify-between items-center text-sm border-b border-slate-50 dark:border-slate-800 pb-2">
+                                        <span class="font-semibold text-slate-900 dark:text-white">Dansk</span>
+                                        <span class="text-slate-500">Tale og skrive (flydende)</span>
+                                    </li>
+                                    <li class="flex justify-between items-center text-sm border-b border-slate-50 dark:border-slate-800 pb-2">
+                                        <span class="font-semibold text-slate-900 dark:text-white">Engelsk</span>
+                                        <span class="text-slate-500">Tale og skrive (flydende)</span>
+                                    </li>
+                                    <li class="flex justify-between items-center text-sm">
+                                        <span class="font-semibold text-slate-900 dark:text-white">Urdu/Hindi</span>
+                                        <span class="text-slate-500">Tale (flydende)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <script>
+        const modal = document.getElementById('cv-modal');
+
+        function openCV() {
+            modal.showModal();
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeCV() {
+            modal.close();
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // Close when clicking on backdrop
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeCV();
+            }
+        });
+    </script>
 
 </body>
 </html>
