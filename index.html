@@ -15,12 +15,16 @@
                 extend: {
                     colors: {
                         "primary": "#197fe6",
-                        "background-light": "#f6f7f8",
+                        "background-light": "#f8f9fa", /* Lighter, cleaner background */
                         "background-dark": "#111921",
                         "surface-light": "#ffffff",
                         "surface-dark": "#1a242f",
-                        "subtle-light": "#f0f4f8",
+                        "subtle-light": "#f1f5f9",
                         "subtle-dark": "#16202a",
+                    },
+                    boxShadow: {
+                        'tactile': '0 2px 8px rgba(0,0,0,0.04), 0 0 2px rgba(0,0,0,0.02)',
+                        'tactile-hover': '0 20px 35px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
                     },
                     fontFamily: {
                         "display": ["Inter", "sans-serif"],
@@ -100,7 +104,7 @@
               </div>
             </div>
             <div class="relative shrink-0">
-              <div class="w-48 h-48 lg:w-64 lg:h-64 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-slate-900/5 dark:ring-white/10 bg-surface-light dark:bg-surface-dark">
+              <div class="w-48 h-48 lg:w-64 lg:h-64 rounded-2xl overflow-hidden shadow-tactile ring-4 ring-white dark:ring-slate-800 bg-surface-light dark:bg-surface-dark transition-transform hover:scale-105 duration-500">
                 <img
                   class="w-full h-full object-cover"
                   alt="Professional headshot"
@@ -113,26 +117,26 @@
 
         <!-- Experience -->
         <div class="w-full max-w-5xl px-6 pb-20">
-          <div class="grid md:grid-cols-2 gap-6 mt-8">
+          <div class="grid md:grid-cols-2 gap-8 mt-8">
             <!-- Baggrund -->
-            <div class="bg-surface-light dark:bg-surface-dark p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-primary">
-                  <span class="material-symbols-outlined">history_edu</span>
+            <div class="bg-white dark:bg-surface-dark p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-2 hover:border-primary/20 transition-all duration-300 ease-out">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="p-3 bg-blue-50 dark:bg-blue-900/30 rounded-full text-primary ring-1 ring-blue-100 dark:ring-blue-800">
+                  <span class="material-symbols-outlined text-[28px]">history_edu</span>
                 </div>
-                <h2 class="text-xl font-bold">Baggrund</h2>
+                <h2 class="text-2xl font-bold">Baggrund</h2>
               </div>
-              <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+              <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
                 Jeg har en sjælden kombination af:
               </p>
-              <ul class="space-y-3">
+              <ul class="space-y-4">
                   <li class="flex items-start gap-3">
                     <span class="material-symbols-outlined text-primary shrink-0 mt-0.5">check_circle</span>
-                    <span class="text-slate-600 dark:text-slate-300">20+ års IT-erfaring</span>
+                    <span class="text-slate-600 dark:text-slate-300 text-lg">20+ års IT-erfaring</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <span class="material-symbols-outlined text-primary shrink-0 mt-0.5">check_circle</span>
-                    <span class="text-slate-600 dark:text-slate-300">Reel ledelses- og leveranceansvar</span>
+                    <span class="text-slate-600 dark:text-slate-300 text-lg">Reel ledelses- og leveranceansvar</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <span class="material-symbols-outlined text-primary shrink-0 mt-0.5">check_circle</span>
@@ -150,38 +154,42 @@
             </div>
 
             <!-- Min differentiering -->
-            <div class="bg-surface-light dark:bg-surface-dark p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-primary">
-                  <span class="material-symbols-outlined">stars</span>
+            <div class="bg-white dark:bg-surface-dark p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-2 hover:border-primary/20 transition-all duration-300 ease-out flex flex-col">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="p-3 bg-blue-50 dark:bg-blue-900/30 rounded-full text-primary ring-1 ring-blue-100 dark:ring-blue-800">
+                  <span class="material-symbols-outlined text-[28px]">stars</span>
                 </div>
-                <h2 class="text-xl font-bold">Min differentiering</h2>
+                <h2 class="text-2xl font-bold">Min differentiering</h2>
               </div>
               
-              <p class="text-slate-600 dark:text-slate-300 mb-4">
+              <p class="text-slate-600 dark:text-slate-300 mb-6 text-lg">
                 Jeg arbejder med teknisk overblik, beslutningskraft og sparring – ikke udførsel.
               </p>
               
-              <p class="text-slate-900 dark:text-white font-medium mb-3">
+              <p class="text-slate-900 dark:text-white font-bold mb-4">
                 Det er netop her, jeg adskiller mig fra:
               </p>
               
-              <ul class="space-y-3 mb-6">
+              <ul class="space-y-4 mb-8">
                   <li class="flex items-start gap-3">
-                    <span class="material-symbols-outlined text-slate-400 shrink-0 mt-0.5">remove</span>
-                    <span class="text-slate-600 dark:text-slate-300">rene RTE’er og delivery-profiler uden teknisk forståelse</span>
+                    <div class="mt-1 p-0.5 rounded-full bg-slate-100 dark:bg-slate-800">
+                        <span class="material-symbols-outlined text-slate-400 text-[18px] block">remove</span>
+                    </div>
+                    <span class="text-slate-600 dark:text-slate-300 text-lg">rene RTE’er og delivery-profiler uden teknisk forståelse</span>
                   </li>
                   <li class="flex items-start gap-3">
-                    <span class="material-symbols-outlined text-slate-400 shrink-0 mt-0.5">remove</span>
-                    <span class="text-slate-600 dark:text-slate-300">rene ledere uden IT-dybde og arkitektonisk indsigt</span>
+                    <div class="mt-1 p-0.5 rounded-full bg-slate-100 dark:bg-slate-800">
+                         <span class="material-symbols-outlined text-slate-400 text-[18px] block">remove</span>
+                    </div>
+                    <span class="text-slate-600 dark:text-slate-300 text-lg">rene ledere uden IT-dybde og arkitektonisk indsigt</span>
                   </li>
               </ul>
 
-              <div class="mt-auto bg-primary/5 dark:bg-primary/10 rounded-xl p-4 border border-primary/10 dark:border-primary/20">
-                <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+              <div class="mt-auto bg-slate-50 dark:bg-slate-800/50 rounded-xl p-6 border border-slate-100 dark:border-slate-700">
+                <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2 uppercase tracking-wide">
                     <span class="text-lg">👉</span> Resultat:
                 </h3>
-                <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                <p class="text-base text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
                     Organisationer får én ansvarsbærende leder, der både kan tage styring på flow og træffe kvalificerede tekniske beslutninger – uden at trække arbejdet ned i implementering.
                 </p>
               </div>
@@ -199,114 +207,114 @@
                 <span>🎯</span> Primære konsulentroller (det jeg bør sælges på)
               </h2>
               
-              <div class="grid md:grid-cols-2 gap-6">
+              <div class="grid md:grid-cols-2 gap-8">
                 
                 <!-- 1. RTE -->
-                <div class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl border border-primary/20 ring-1 ring-primary/10 shadow-sm relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+                <div class="bg-white dark:bg-surface-dark p-8 rounded-2xl border border-primary/20 ring-1 ring-primary/5 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-2 hover:ring-primary/20 transition-all duration-300 ease-out relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-primary text-white text-[11px] font-bold px-4 py-1.5 rounded-bl-xl uppercase tracking-wider shadow-sm z-10">
                         Mit absolut stærkeste match
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">1️⃣ Release Train Engineer (RTE) / Senior Delivery Lead</h3>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">1️⃣ Release Train Engineer (RTE) / Senior Delivery Lead</h3>
                     
                     <div class="mt-6">
-                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Når organisationer bruger mig</h4>
-                        <ul class="space-y-1.5 mb-4">
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> ART’er er ustabile</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Leverancer er uforudsigelige</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Mange afhængigheder på tværs af teams og leverandører</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Ledelsen ønsker ro, overblik og klar fremdrift</li>
+                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-3 tracking-wider">Når organisationer bruger mig</h4>
+                        <ul class="space-y-2 mb-6">
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> ART’er er ustabile</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Leverancer er uforudsigelige</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Mange afhængigheder på tværs af teams og leverandører</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Ledelsen ønsker ro, overblik og klar fremdrift</li>
                         </ul>
                     </div>
 
-                    <div class="mt-4">
-                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Jeg bidrager med</h4>
-                        <ul class="space-y-1.5 mb-4">
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> End-to-end ansvar for flow og leverancesikkerhed</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> PI Planning, afhængighedsstyring og governance</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Tæt samarbejde med Business Owners, ledelse og leverandører</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Stabilisering, prioritering og løbende forbedring</li>
+                    <div class="mt-4 border-t border-slate-50 dark:border-slate-800 pt-4">
+                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-3 tracking-wider">Jeg bidrager med</h4>
+                        <ul class="space-y-2 mb-6">
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> End-to-end ansvar for flow og leverancesikkerhed</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> PI Planning, afhængighedsstyring og governance</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Tæt samarbejde med Business Owners, ledelse og leverandører</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Stabilisering, prioritering og løbende forbedring</li>
                         </ul>
                     </div>
 
-                    <div class="mt-6 bg-blue-50/50 dark:bg-blue-900/10 p-3 rounded-lg border border-blue-100 dark:border-blue-900/20">
-                        <p class="text-sm font-medium text-slate-900 dark:text-white">
+                    <div class="mt-6 bg-blue-50/80 dark:bg-blue-900/10 p-4 rounded-xl border border-blue-100 dark:border-blue-900/20">
+                        <p class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wide text-xs mb-1">
                             <span class="text-primary mr-1">👉</span> Konsulenthus-værdi
                         </p>
-                        <p class="text-sm text-slate-600 dark:text-slate-400 italic mt-1">
+                        <p class="text-base text-slate-700 dark:text-slate-300 italic font-medium">
                             “Vi kan sende ham ud uden risiko – han tager ansvar.”
                         </p>
                     </div>
                 </div>
 
                 <!-- 2. Delivery Manager -->
-                <div class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">2️⃣ Senior Delivery Manager / Program Manager</h3>
+                <div class="bg-white dark:bg-surface-dark p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-2 hover:border-primary/20 transition-all duration-300 ease-out group">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">2️⃣ Senior Delivery Manager / Program Manager</h3>
                     
-                    <div class="mt-4">
-                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Når rollen opstår</h4>
-                        <ul class="space-y-1.5 mb-4">
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Flere teams leverer mod samme mål</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Program-setup er uklart eller umodent</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Forretning og IT er i konflikt</li>
+                    <div class="mt-6">
+                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-3 tracking-wider">Når rollen opstår</h4>
+                        <ul class="space-y-2 mb-6">
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Flere teams leverer mod samme mål</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Program-setup er uklart eller umodent</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Forretning og IT er i konflikt</li>
                         </ul>
                     </div>
 
-                    <div class="mt-4">
-                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Jeg bidrager med</h4>
-                        <ul class="space-y-1.5 mb-4">
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Koordinering og overblik på tværs</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Prioritering og fremdrift</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Oversættelse mellem forretning, IT og teknik</li>
+                    <div class="mt-4 border-t border-slate-50 dark:border-slate-800 pt-4">
+                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-3 tracking-wider">Jeg bidrager med</h4>
+                        <ul class="space-y-2 mb-6">
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Koordinering og overblik på tværs</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Prioritering og fremdrift</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Oversættelse mellem forretning, IT og teknik</li>
                         </ul>
                     </div>
 
-                    <div class="mt-6 bg-slate-50 dark:bg-slate-800/50 p-3 rounded-lg">
-                        <p class="text-sm text-slate-600 dark:text-slate-300">
+                    <div class="mt-6 bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl">
+                        <p class="text-sm text-slate-600 dark:text-slate-300 font-medium">
                             <span class="text-primary mr-1">👉</span> Bruges ofte, når SAFe ikke er fuldt implementeret – men behovet for styring er der.
                         </p>
                     </div>
                 </div>
 
                 <!-- 3. Product Manager -->
-                <div class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">3️⃣ Product Manager / Product Lead</h3>
-                    <p class="text-sm font-semibold text-primary mb-4">Meget stærk sekundær rolle</p>
+                <div class="bg-white dark:bg-surface-dark p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-2 hover:border-primary/20 transition-all duration-300 ease-out group">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">3️⃣ Product Manager / Product Lead</h3>
+                    <p class="text-sm font-semibold text-primary mb-6">Meget stærk sekundær rolle</p>
                     
                     <div class="mt-4">
-                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Når organisationer mangler</h4>
-                        <ul class="space-y-1.5 mb-4">
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Klar produktretning</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Prioritering under pres</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Sammenhæng mellem strategi og leverancer</li>
+                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-3 tracking-wider">Når organisationer mangler</h4>
+                        <ul class="space-y-2 mb-6">
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Klar produktretning</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Prioritering under pres</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Sammenhæng mellem strategi og leverancer</li>
                         </ul>
                     </div>
 
-                    <div class="mt-4">
-                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Jeg bidrager med</h4>
-                        <ul class="space-y-1.5 mb-4">
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Vision og roadmap</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Prioritering på tværs af teams og initiativer</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Tæt stakeholder-alignment</li>
+                    <div class="mt-4 border-t border-slate-50 dark:border-slate-800 pt-4">
+                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-3 tracking-wider">Jeg bidrager med</h4>
+                        <ul class="space-y-2 mb-6">
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Vision og roadmap</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Prioritering på tværs af teams og initiativer</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Tæt stakeholder-alignment</li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- 4. Teamleder -->
-                <div class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">4️⃣ Teamleder / IT-leder</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">(især i offentlig sektor)</p>
+                <div class="bg-white dark:bg-surface-dark p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-2 hover:border-primary/20 transition-all duration-300 ease-out group">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary transition-colors">4️⃣ Teamleder / IT-leder</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">(især i offentlig sektor)</p>
                     
                     <div class="mt-4">
-                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Jeg kan</h4>
-                        <ul class="space-y-1.5 mb-4">
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Gå ind hurtigt i vakancer eller reorganiseringer</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Skabe struktur, retning og trivsel</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-400">•</span> Tage både personale- og leveranceansvar</li>
+                        <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-3 tracking-wider">Jeg kan</h4>
+                        <ul class="space-y-2 mb-6">
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Gå ind hurtigt i vakancer eller reorganiseringer</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Skabe struktur, retning og trivsel</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2"><span class="text-slate-300">•</span> Tage både personale- og leveranceansvar</li>
                         </ul>
                     </div>
 
-                    <div class="mt-6 bg-slate-50 dark:bg-slate-800/50 p-3 rounded-lg">
-                        <p class="text-sm text-slate-600 dark:text-slate-300">
+                    <div class="mt-6 bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl">
+                        <p class="text-sm text-slate-600 dark:text-slate-300 font-medium">
                             <span class="text-primary mr-1">👉</span> Særligt velegnet ved organisatoriske forandringer.
                         </p>
                     </div>
@@ -332,58 +340,58 @@
                 <div class="grid md:grid-cols-3 gap-6">
                     
                     <!-- Tech Delivery Lead -->
-                    <div class="bg-subtle-light dark:bg-subtle-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+                    <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-2 hover:border-primary/20 transition-all duration-300 ease-out">
                         <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">🔹 Technical Delivery Lead</h3>
                         
                         <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Når organisationen bruger mig</h4>
-                        <ul class="space-y-1.5 mb-4">
-                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Teknisk komplekse løsninger</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Mange integrationer og afhængigheder</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Arkitekturbeslutninger mangler ejerskab</li>
+                        <ul class="space-y-2 mb-4">
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-300">•</span> Teknisk komplekse løsninger</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-300">•</span> Mange integrationer og afhængigheder</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-300">•</span> Arkitekturbeslutninger mangler ejerskab</li>
                         </ul>
 
                         <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Jeg bidrager med</h4>
-                        <ul class="space-y-1.5">
-                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Teknisk overblik og prioritering</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Kvalificerede beslutninger om arkitektur og teknisk gæld</li>
-                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Samspil mellem arkitekter, teams, leverandører og ledelse</li>
+                        <ul class="space-y-2">
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-300">•</span> Teknisk overblik og prioritering</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-300">•</span> Kvalificerede beslutninger om arkitektur og teknisk gæld</li>
+                            <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-300">•</span> Samspil mellem arkitekter, teams, leverandører og ledelse</li>
                         </ul>
                     </div>
 
                     <!-- Tech Product Mgr -->
-                    <div class="bg-subtle-light dark:bg-subtle-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+                    <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-2 hover:border-primary/20 transition-all duration-300 ease-out">
                         <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">🔹 Technical Product Manager / Technical Product Lead</h3>
                         
                         <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Når rollen giver mening</h4>
-                        <ul class="space-y-1.5 mb-4">
+                        <ul class="space-y-2 mb-4">
                             <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Platforme, fagsystemer og integrationslandskaber</li>
                             <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Offentlig sektor (legacy + modernisering)</li>
                         </ul>
 
                         <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Jeg bidrager med</h4>
-                        <ul class="space-y-1.5 mb-4">
+                        <ul class="space-y-2 mb-4">
                             <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Teknisk roadmap</li>
                             <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Prioritering af teknisk vs. forretningsværdi</li>
                             <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Stakeholder-dialog og konsekvensvurdering</li>
                         </ul>
 
-                        <p class="text-xs text-slate-500 dark:text-slate-500 mt-4 border-t border-slate-200 dark:border-slate-700 pt-2">
+                        <p class="text-xs text-slate-500 dark:text-slate-500 mt-4 border-t border-slate-100 dark:border-slate-700 pt-3">
                             <span class="text-primary mr-1">👉</span> Afgrænsning: roadmap og beslutninger – ikke backlog og implementering.
                         </p>
                     </div>
 
                     <!-- Architect -->
-                    <div class="bg-subtle-light dark:bg-subtle-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+                    <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-2 hover:border-primary/20 transition-all duration-300 ease-out">
                         <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">🔹 Solution / Domain Architect (advisory)</h3>
                         
                         <h4 class="text-xs font-bold uppercase text-slate-400 dark:text-slate-500 mb-2 tracking-wider">Kun i rådgivende form</h4>
-                        <ul class="space-y-1.5 mb-4">
+                        <ul class="space-y-2 mb-4">
                             <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Arkitektur-review</li>
                             <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Sparring på designvalg</li>
                             <li class="text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2"><span class="text-slate-400">•</span> Risiko- og konsekvensvurderinger</li>
                         </ul>
 
-                        <p class="text-xs text-slate-500 dark:text-slate-500 mt-4 border-t border-slate-200 dark:border-slate-700 pt-2">
+                        <p class="text-xs text-slate-500 dark:text-slate-500 mt-4 border-t border-slate-100 dark:border-slate-700 pt-3">
                             <span class="text-primary mr-1">👉</span> Ingen design-til-implementering, ingen kodning.
                         </p>
                     </div>
@@ -391,8 +399,8 @@
                 </div>
             </div>
 
-            <!-- Cautionary Roles -->
-            <div class="w-full bg-red-50 dark:bg-red-900/10 p-6 rounded-xl border border-red-100 dark:border-red-900/20">
+            <!-- Cautionary Roles (No lift effect, stays grounded/flat to indicate caution) -->
+            <div class="w-full bg-red-50 dark:bg-red-900/10 p-6 rounded-2xl border border-red-100 dark:border-red-900/20">
                 <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
                     <span>⛔</span> Roller – kun hvis det bliver en nødvendighed
                 </h3>
@@ -409,8 +417,8 @@
 
         </section>
 
-        <!-- Matrix -->
-        <section class="w-full bg-surface-light dark:bg-surface-dark border-y border-slate-200 dark:border-slate-800 py-24" id="matrix">
+        <!-- Matrix (REDESIGNED with Tactile Pop-Up) -->
+        <section class="w-full bg-background-light dark:bg-background-dark border-y border-slate-200 dark:border-slate-800 py-24" id="matrix">
           <div class="max-w-5xl mx-auto px-6">
             <div class="mb-12 text-center md:text-left">
               <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Role Fit Matrix – Konsulentprofil</h2>
@@ -418,57 +426,215 @@
                 Konsulenthus-venlig rolleoversigt. Denne matrix er designet til hurtigt at afklare, hvor min profil skaber størst værdi i forhold til jeres kunders behov.
               </p>
             </div>
-            <div class="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm bg-white dark:bg-background-dark">
-              <table class="w-full text-left border-collapse">
-                <thead class="bg-slate-50 dark:bg-slate-800/50">
-                  <tr>
-                    <th class="p-5 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider border-b border-slate-200 dark:border-slate-700">Rolle</th>
-                    <th class="p-5 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider border-b border-slate-200 dark:border-slate-700 text-right">Egnethed</th>
-                  </tr>
-                </thead>
-                <tbody class="divide-y divide-slate-200 dark:divide-slate-700 text-sm">
-                    <!-- Release Train Engineer -->
-                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
-                        <td class="p-5 font-medium text-slate-900 dark:text-white">Release Train Engineer</td>
-                        <td class="p-5 text-right text-amber-500 tracking-widest text-base">⭐⭐⭐⭐⭐</td>
-                    </tr>
-                    <!-- Senior Delivery Lead -->
-                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors bg-slate-50/50 dark:bg-slate-800/20">
-                        <td class="p-5 font-medium text-slate-900 dark:text-white">Senior Delivery Lead</td>
-                        <td class="p-5 text-right text-amber-500 tracking-widest text-base">⭐⭐⭐⭐⭐</td>
-                    </tr>
-                    <!-- Program Manager -->
-                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
-                        <td class="p-5 font-medium text-slate-900 dark:text-white">Program Manager</td>
-                        <td class="p-5 text-right text-amber-500 tracking-widest text-base">⭐⭐⭐⭐<span class="text-slate-300 dark:text-slate-600">☆</span></td>
-                    </tr>
-                    <!-- Product Manager / Product Lead -->
-                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors bg-slate-50/50 dark:bg-slate-800/20">
-                        <td class="p-5 font-medium text-slate-900 dark:text-white">Product Manager / Product Lead</td>
-                        <td class="p-5 text-right text-amber-500 tracking-widest text-base">⭐⭐⭐⭐<span class="text-slate-300 dark:text-slate-600">☆</span></td>
-                    </tr>
-                    <!-- Technical Delivery Lead (non-coding) -->
-                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
-                        <td class="p-5 font-medium text-slate-900 dark:text-white">Technical Delivery Lead (non-coding)</td>
-                        <td class="p-5 text-right text-amber-500 tracking-widest text-base">⭐⭐⭐⭐<span class="text-slate-300 dark:text-slate-600">☆</span></td>
-                    </tr>
-                    <!-- Technical Product Lead -->
-                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors bg-slate-50/50 dark:bg-slate-800/20">
-                        <td class="p-5 font-medium text-slate-900 dark:text-white">Technical Product Lead</td>
-                        <td class="p-5 text-right text-amber-500 tracking-widest text-base">⭐⭐⭐⭐<span class="text-slate-300 dark:text-slate-600">☆</span></td>
-                    </tr>
-                    <!-- Agile Coach (ART/ledelse) -->
-                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
-                        <td class="p-5 font-medium text-slate-900 dark:text-white">Agile Coach (ART/ledelse)</td>
-                        <td class="p-5 text-right text-amber-500 tracking-widest text-base">⭐⭐⭐⭐<span class="text-slate-300 dark:text-slate-600">☆</span></td>
-                    </tr>
-                    <!-- Interim Teamleder / IT-leder -->
-                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors bg-slate-50/50 dark:bg-slate-800/20">
-                        <td class="p-5 font-medium text-slate-900 dark:text-white">Interim Teamleder / IT-leder</td>
-                        <td class="p-5 text-right text-amber-500 tracking-widest text-base">⭐⭐⭐⭐<span class="text-slate-300 dark:text-slate-600">☆</span></td>
-                    </tr>
-                </tbody>
-              </table>
+            
+            <div class="flex flex-col gap-4">
+                
+                <!-- Card 1 -->
+                <div class="group w-full bg-white dark:bg-surface-dark p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-1.5 hover:border-primary/30 transition-all duration-300 ease-out flex items-center gap-6">
+                    <div class="shrink-0 size-14 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 flex items-center justify-center text-primary transition-transform group-hover:scale-110 duration-300">
+                        <span class="material-symbols-outlined text-[28px]">train</span>
+                    </div>
+                    <div class="flex-1 flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-6">
+                        <div class="flex flex-col">
+                            <div class="font-bold text-slate-900 dark:text-white text-lg">
+                                Release Train Engineer
+                            </div>
+                            <span class="text-xs text-slate-400 font-medium uppercase tracking-wide mt-0.5">High Priority</span>
+                        </div>
+                        <div class="hidden md:block w-px h-10 bg-slate-100 dark:bg-slate-700"></div>
+                        <div class="flex items-center justify-between md:justify-end w-full md:w-auto">
+                             <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 group-hover:bg-white group-hover:border-primary/20 transition-all">
+                                <span class="hidden md:inline text-xs font-bold text-slate-400 uppercase tracking-wider mr-1">Match</span>
+                                <div class="flex text-amber-500 gap-0.5">
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group w-full bg-white dark:bg-surface-dark p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-1.5 hover:border-primary/30 transition-all duration-300 ease-out flex items-center gap-6">
+                    <div class="shrink-0 size-14 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 flex items-center justify-center text-primary transition-transform group-hover:scale-110 duration-300">
+                        <span class="material-symbols-outlined text-[28px]">local_shipping</span>
+                    </div>
+                    <div class="flex-1 flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-6">
+                        <div class="flex flex-col">
+                             <div class="font-bold text-slate-900 dark:text-white text-lg">
+                                Senior Delivery Lead
+                            </div>
+                            <span class="text-xs text-slate-400 font-medium uppercase tracking-wide mt-0.5">High Priority</span>
+                        </div>
+                        <div class="hidden md:block w-px h-10 bg-slate-100 dark:bg-slate-700"></div>
+                        <div class="flex items-center justify-between md:justify-end w-full md:w-auto">
+                             <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 group-hover:bg-white group-hover:border-primary/20 transition-all">
+                                <span class="hidden md:inline text-xs font-bold text-slate-400 uppercase tracking-wider mr-1">Match</span>
+                                <div class="flex text-amber-500 gap-0.5">
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group w-full bg-white dark:bg-surface-dark p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-1.5 hover:border-primary/30 transition-all duration-300 ease-out flex items-center gap-6">
+                    <div class="shrink-0 size-14 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-400 transition-colors group-hover:bg-primary/5 group-hover:border-primary/20 group-hover:text-primary">
+                        <span class="material-symbols-outlined text-[28px]">account_tree</span>
+                    </div>
+                    <div class="flex-1 flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-6">
+                        <div class="font-bold text-slate-900 dark:text-white text-lg pl-1">
+                            Program Manager
+                        </div>
+                        <div class="hidden md:block w-px h-10 bg-slate-100 dark:bg-slate-700"></div>
+                        <div class="flex items-center justify-between md:justify-end w-full md:w-auto">
+                             <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 group-hover:bg-white group-hover:border-primary/20 transition-all">
+                                <span class="hidden md:inline text-xs font-bold text-slate-400 uppercase tracking-wider mr-1">Match</span>
+                                <div class="flex text-amber-500 gap-0.5">
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-slate-200 dark:text-slate-700 text-[20px]">star</span>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="group w-full bg-white dark:bg-surface-dark p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-1.5 hover:border-primary/30 transition-all duration-300 ease-out flex items-center gap-6">
+                    <div class="shrink-0 size-14 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-400 transition-colors group-hover:bg-primary/5 group-hover:border-primary/20 group-hover:text-primary">
+                        <span class="material-symbols-outlined text-[28px]">inventory_2</span>
+                    </div>
+                    <div class="flex-1 flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-6">
+                        <div class="font-bold text-slate-900 dark:text-white text-lg pl-1">
+                            Product Manager / Product Lead
+                        </div>
+                        <div class="hidden md:block w-px h-10 bg-slate-100 dark:bg-slate-700"></div>
+                        <div class="flex items-center justify-between md:justify-end w-full md:w-auto">
+                             <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 group-hover:bg-white group-hover:border-primary/20 transition-all">
+                                <span class="hidden md:inline text-xs font-bold text-slate-400 uppercase tracking-wider mr-1">Match</span>
+                                <div class="flex text-amber-500 gap-0.5">
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-slate-200 dark:text-slate-700 text-[20px]">star</span>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="group w-full bg-white dark:bg-surface-dark p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-1.5 hover:border-primary/30 transition-all duration-300 ease-out flex items-center gap-6">
+                    <div class="shrink-0 size-14 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-400 transition-colors group-hover:bg-primary/5 group-hover:border-primary/20 group-hover:text-primary">
+                        <span class="material-symbols-outlined text-[28px]">developer_board</span>
+                    </div>
+                    <div class="flex-1 flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-6">
+                        <div class="font-bold text-slate-900 dark:text-white text-lg pl-1">
+                            Technical Delivery Lead (non-coding)
+                        </div>
+                        <div class="hidden md:block w-px h-10 bg-slate-100 dark:bg-slate-700"></div>
+                        <div class="flex items-center justify-between md:justify-end w-full md:w-auto">
+                             <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 group-hover:bg-white group-hover:border-primary/20 transition-all">
+                                <span class="hidden md:inline text-xs font-bold text-slate-400 uppercase tracking-wider mr-1">Match</span>
+                                <div class="flex text-amber-500 gap-0.5">
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-slate-200 dark:text-slate-700 text-[20px]">star</span>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="group w-full bg-white dark:bg-surface-dark p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-1.5 hover:border-primary/30 transition-all duration-300 ease-out flex items-center gap-6">
+                    <div class="shrink-0 size-14 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-400 transition-colors group-hover:bg-primary/5 group-hover:border-primary/20 group-hover:text-primary">
+                        <span class="material-symbols-outlined text-[28px]">memory</span>
+                    </div>
+                    <div class="flex-1 flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-6">
+                        <div class="font-bold text-slate-900 dark:text-white text-lg pl-1">
+                            Technical Product Lead
+                        </div>
+                        <div class="hidden md:block w-px h-10 bg-slate-100 dark:bg-slate-700"></div>
+                        <div class="flex items-center justify-between md:justify-end w-full md:w-auto">
+                             <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 group-hover:bg-white group-hover:border-primary/20 transition-all">
+                                <span class="hidden md:inline text-xs font-bold text-slate-400 uppercase tracking-wider mr-1">Match</span>
+                                <div class="flex text-amber-500 gap-0.5">
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-slate-200 dark:text-slate-700 text-[20px]">star</span>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="group w-full bg-white dark:bg-surface-dark p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-1.5 hover:border-primary/30 transition-all duration-300 ease-out flex items-center gap-6">
+                    <div class="shrink-0 size-14 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-400 transition-colors group-hover:bg-primary/5 group-hover:border-primary/20 group-hover:text-primary">
+                        <span class="material-symbols-outlined text-[28px]">psychology</span>
+                    </div>
+                    <div class="flex-1 flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-6">
+                        <div class="font-bold text-slate-900 dark:text-white text-lg pl-1">
+                            Agile Coach (ART/ledelse)
+                        </div>
+                        <div class="hidden md:block w-px h-10 bg-slate-100 dark:bg-slate-700"></div>
+                        <div class="flex items-center justify-between md:justify-end w-full md:w-auto">
+                             <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 group-hover:bg-white group-hover:border-primary/20 transition-all">
+                                <span class="hidden md:inline text-xs font-bold text-slate-400 uppercase tracking-wider mr-1">Match</span>
+                                <div class="flex text-amber-500 gap-0.5">
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-slate-200 dark:text-slate-700 text-[20px]">star</span>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="group w-full bg-white dark:bg-surface-dark p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-1.5 hover:border-primary/30 transition-all duration-300 ease-out flex items-center gap-6">
+                    <div class="shrink-0 size-14 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-400 transition-colors group-hover:bg-primary/5 group-hover:border-primary/20 group-hover:text-primary">
+                        <span class="material-symbols-outlined text-[28px]">group</span>
+                    </div>
+                    <div class="flex-1 flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-6">
+                        <div class="font-bold text-slate-900 dark:text-white text-lg pl-1">
+                            Interim Teamleder / IT-leder
+                        </div>
+                        <div class="hidden md:block w-px h-10 bg-slate-100 dark:bg-slate-700"></div>
+                        <div class="flex items-center justify-between md:justify-end w-full md:w-auto">
+                             <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700/50 group-hover:bg-white group-hover:border-primary/20 transition-all">
+                                <span class="hidden md:inline text-xs font-bold text-slate-400 uppercase tracking-wider mr-1">Match</span>
+                                <div class="flex text-amber-500 gap-0.5">
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-[20px] fill-current">star</span>
+                                    <span class="material-symbols-outlined text-slate-200 dark:text-slate-700 text-[20px]">star</span>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
           </div>
         </section>
@@ -497,42 +663,52 @@
               </div>
 
               <div>
-                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Sådan skaber jeg værdi</h3>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Sådan skaber jeg værdi</h3>
                 <div class="grid sm:grid-cols-2 gap-4">
-                    <div class="p-4 rounded-xl bg-subtle-light dark:bg-subtle-dark border border-slate-100 dark:border-slate-800">
-                      <div class="flex items-center gap-2 mb-2">
-                        <span class="material-symbols-outlined text-primary">grid_view</span>
+                    <div class="p-6 rounded-2xl bg-white dark:bg-surface-dark border border-slate-100 dark:border-slate-800 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-1.5 transition-all duration-300 ease-out group">
+                      <div class="flex items-center gap-3 mb-3">
+                        <div class="p-2 rounded-full bg-slate-50 dark:bg-slate-800 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined">grid_view</span>
+                        </div>
                         <h4 class="font-bold text-slate-900 dark:text-white">Ro & Struktur</h4>
                       </div>
-                      <p class="text-sm text-slate-600 dark:text-slate-400">Skaber ro og struktur i pressede leverance-setup</p>
+                      <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Skaber ro og struktur i pressede leverance-setup</p>
                     </div>
-                    <div class="p-4 rounded-xl bg-subtle-light dark:bg-subtle-dark border border-slate-100 dark:border-slate-800">
-                      <div class="flex items-center gap-2 mb-2">
-                        <span class="material-symbols-outlined text-primary">gavel</span>
+                    <div class="p-6 rounded-2xl bg-white dark:bg-surface-dark border border-slate-100 dark:border-slate-800 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-1.5 transition-all duration-300 ease-out group">
+                      <div class="flex items-center gap-3 mb-3">
+                         <div class="p-2 rounded-full bg-slate-50 dark:bg-slate-800 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                             <span class="material-symbols-outlined">gavel</span>
+                         </div>
                         <h4 class="font-bold text-slate-900 dark:text-white">Beslutningskraft</h4>
                       </div>
-                      <p class="text-sm text-slate-600 dark:text-slate-400">Træffer klare beslutninger på både ledelses- og teknisk niveau</p>
+                      <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Træffer klare beslutninger på både ledelses- og teknisk niveau</p>
                     </div>
-                    <div class="p-4 rounded-xl bg-subtle-light dark:bg-subtle-dark border border-slate-100 dark:border-slate-800">
-                      <div class="flex items-center gap-2 mb-2">
-                        <span class="material-symbols-outlined text-primary">directions</span>
+                    <div class="p-6 rounded-2xl bg-white dark:bg-surface-dark border border-slate-100 dark:border-slate-800 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-1.5 transition-all duration-300 ease-out group">
+                      <div class="flex items-center gap-3 mb-3">
+                         <div class="p-2 rounded-full bg-slate-50 dark:bg-slate-800 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                             <span class="material-symbols-outlined">directions</span>
+                         </div>
                         <h4 class="font-bold text-slate-900 dark:text-white">Eksekvering</h4>
                       </div>
-                      <p class="text-sm text-slate-600 dark:text-slate-400">Oversætter strategi og arkitektur til eksekverbar retning</p>
+                      <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Oversætter strategi og arkitektur til eksekverbar retning</p>
                     </div>
-                    <div class="p-4 rounded-xl bg-subtle-light dark:bg-subtle-dark border border-slate-100 dark:border-slate-800">
-                      <div class="flex items-center gap-2 mb-2">
-                        <span class="material-symbols-outlined text-primary">handshake</span>
+                    <div class="p-6 rounded-2xl bg-white dark:bg-surface-dark border border-slate-100 dark:border-slate-800 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-1.5 transition-all duration-300 ease-out group">
+                      <div class="flex items-center gap-3 mb-3">
+                         <div class="p-2 rounded-full bg-slate-50 dark:bg-slate-800 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                             <span class="material-symbols-outlined">handshake</span>
+                         </div>
                         <h4 class="font-bold text-slate-900 dark:text-white">Brobygning</h4>
                       </div>
-                      <p class="text-sm text-slate-600 dark:text-slate-400">Sikrer fælles forståelse mellem forretning, IT og leverandører</p>
+                      <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Sikrer fælles forståelse mellem forretning, IT og leverandører</p>
                     </div>
-                    <div class="p-4 rounded-xl bg-subtle-light dark:bg-subtle-dark border border-slate-100 dark:border-slate-800 sm:col-span-2">
-                      <div class="flex items-center gap-2 mb-2">
-                        <span class="material-symbols-outlined text-primary">shield</span>
+                    <div class="p-6 rounded-2xl bg-white dark:bg-surface-dark border border-slate-100 dark:border-slate-800 shadow-tactile hover:shadow-tactile-hover hover:-translate-y-1.5 transition-all duration-300 ease-out group sm:col-span-2">
+                      <div class="flex items-center gap-3 mb-3">
+                         <div class="p-2 rounded-full bg-slate-50 dark:bg-slate-800 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                             <span class="material-symbols-outlined">shield</span>
+                         </div>
                         <h4 class="font-bold text-slate-900 dark:text-white">Effekt & Risiko</h4>
                       </div>
-                      <p class="text-sm text-slate-600 dark:text-slate-400">Fokus på effekt, risiko og langsigtet bæredygtighed</p>
+                      <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Fokus på effekt, risiko og langsigtet bæredygtighed</p>
                     </div>
                 </div>
               </div>
@@ -540,44 +716,44 @@
 
             <!-- Typiske opgaver Sidebar -->
             <div class="lg:col-span-1">
-              <div class="bg-primary/5 dark:bg-primary/10 rounded-2xl p-6 border border-primary/10 dark:border-primary/20 sticky top-24">
-                <h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2">
+              <div class="bg-primary/5 dark:bg-primary/10 rounded-2xl p-8 border border-primary/10 dark:border-primary/20 sticky top-24">
+                <h3 class="text-lg font-bold text-primary mb-6 flex items-center gap-2">
                   <span class="material-symbols-outlined">assignment</span>
                   Typiske opgaver
                 </h3>
                 <ul class="space-y-4">
                     <li class="flex gap-3 text-sm text-slate-700 dark:text-slate-300">
-                      <span class="bg-white dark:bg-slate-800 p-1 rounded shadow-sm text-primary shrink-0 h-fit">
+                      <span class="bg-white dark:bg-slate-800 p-1.5 rounded-full shadow-sm text-primary shrink-0 h-fit ring-1 ring-slate-100 dark:ring-slate-700">
                         <span class="material-symbols-outlined text-[16px] block">arrow_right_alt</span>
                       </span>
                       Etablering og stabilisering af ART’er og multi-team setup
                     </li>
                     <li class="flex gap-3 text-sm text-slate-700 dark:text-slate-300">
-                      <span class="bg-white dark:bg-slate-800 p-1 rounded shadow-sm text-primary shrink-0 h-fit">
+                      <span class="bg-white dark:bg-slate-800 p-1.5 rounded-full shadow-sm text-primary shrink-0 h-fit ring-1 ring-slate-100 dark:ring-slate-700">
                         <span class="material-symbols-outlined text-[16px] block">arrow_right_alt</span>
                       </span>
                       End-to-end flow, governance og leverancesikkerhed
                     </li>
                     <li class="flex gap-3 text-sm text-slate-700 dark:text-slate-300">
-                      <span class="bg-white dark:bg-slate-800 p-1 rounded shadow-sm text-primary shrink-0 h-fit">
+                      <span class="bg-white dark:bg-slate-800 p-1.5 rounded-full shadow-sm text-primary shrink-0 h-fit ring-1 ring-slate-100 dark:ring-slate-700">
                         <span class="material-symbols-outlined text-[16px] block">arrow_right_alt</span>
                       </span>
                       PI Planning og afhængighedsstyring
                     </li>
                     <li class="flex gap-3 text-sm text-slate-700 dark:text-slate-300">
-                      <span class="bg-white dark:bg-slate-800 p-1 rounded shadow-sm text-primary shrink-0 h-fit">
+                      <span class="bg-white dark:bg-slate-800 p-1.5 rounded-full shadow-sm text-primary shrink-0 h-fit ring-1 ring-slate-100 dark:ring-slate-700">
                         <span class="material-symbols-outlined text-[16px] block">arrow_right_alt</span>
                       </span>
                       Stakeholder- og leverandørledelse (onshore/offshore)
                     </li>
                     <li class="flex gap-3 text-sm text-slate-700 dark:text-slate-300">
-                      <span class="bg-white dark:bg-slate-800 p-1 rounded shadow-sm text-primary shrink-0 h-fit">
+                      <span class="bg-white dark:bg-slate-800 p-1.5 rounded-full shadow-sm text-primary shrink-0 h-fit ring-1 ring-slate-100 dark:ring-slate-700">
                         <span class="material-symbols-outlined text-[16px] block">arrow_right_alt</span>
                       </span>
                       Interim ansvar for produktretning, roadmap og prioritering
                     </li>
                     <li class="flex gap-3 text-sm text-slate-700 dark:text-slate-300">
-                      <span class="bg-white dark:bg-slate-800 p-1 rounded shadow-sm text-primary shrink-0 h-fit">
+                      <span class="bg-white dark:bg-slate-800 p-1.5 rounded-full shadow-sm text-primary shrink-0 h-fit ring-1 ring-slate-100 dark:ring-slate-700">
                         <span class="material-symbols-outlined text-[16px] block">arrow_right_alt</span>
                       </span>
                       Teknisk ledelse og beslutningsstøtte i komplekse løsninger
