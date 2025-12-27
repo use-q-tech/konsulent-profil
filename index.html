@@ -61,6 +61,145 @@
             background: rgba(15, 23, 42, 0.6);
             backdrop-filter: blur(4px);
         }
+
+        /* --- PRINT STYLES --- */
+        @media print {
+            @page {
+                margin: 1.5cm;
+                size: auto;
+            }
+
+            /* Hide Main Site UI */
+            body > nav, 
+            body > main, 
+            body > footer,
+            #cv-modal button { 
+                display: none !important; 
+            }
+
+            /* Reset Body & HTML */
+            body, html {
+                height: auto !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: visible !important;
+                background-color: white !important;
+                color: black !important;
+            }
+
+            /* Ensure Modal Container is Visible and Unrestricted */
+            dialog#cv-modal {
+                display: block !important;
+                position: relative !important;
+                inset: 0 !important;
+                width: 100% !important;
+                height: auto !important;
+                max-width: none !important;
+                max-height: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border: none !important;
+                overflow: visible !important;
+                background: white !important;
+                box-shadow: none !important;
+                transform: none !important;
+                animation: none !important;
+            }
+            dialog#cv-modal::backdrop {
+                background: none !important;
+            }
+
+            /* Reset Internal Modal Wrappers */
+            #cv-modal > div,
+            #cv-modal > div > div {
+                height: auto !important;
+                width: 100% !important;
+                max-width: none !important;
+                max-height: none !important;
+                border: none !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                overflow: visible !important;
+                position: static !important;
+                display: block !important; /* Forces stacking if flex causes issues, but we tweak below */
+            }
+
+            /* Keep layout structure but remove constraints */
+            #cv-modal .flex.flex-col {
+                display: block !important;
+            }
+            
+            /* The scrollable content area must allow overflow */
+            #cv-modal .overflow-y-auto {
+                overflow: visible !important;
+                height: auto !important;
+                flex: none !important;
+            }
+
+            /* Header adjustments for print */
+            #cv-modal .sticky {
+                position: static !important;
+                border-bottom: 2px solid #eee !important;
+                padding-bottom: 20px !important;
+                margin-bottom: 30px !important;
+                background: transparent !important;
+            }
+            #cv-modal .sticky h2 {
+                font-size: 24px !important;
+            }
+
+            /* Typography & Colors for Print */
+            p, h1, h2, h3, h4, span, div, li {
+                color: black !important;
+                text-shadow: none !important;
+            }
+            
+            /* Restore grid for layout (e.g. sidebar) */
+            .lg\:grid-cols-3 {
+                display: grid !important;
+                grid-template-columns: 2fr 1fr !important; /* Force the 2/3 - 1/3 layout */
+                gap: 40px !important;
+            }
+            
+            /* Ensure images print nicely */
+            img {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                border: 1px solid #eee !important;
+                box-shadow: none !important;
+            }
+
+            /* Hide heavy backgrounds to save ink and look cleaner */
+            .bg-surface-light, .bg-background-light, .bg-blue-50, .bg-primary {
+                background-color: transparent !important;
+                border: none !important;
+            }
+            
+            /* Make timeline lines lighter/simpler */
+            .border-l-2 {
+                border-left-width: 1px !important;
+                border-color: #ccc !important;
+            }
+            .rounded-3xl, .rounded-2xl {
+                border-radius: 0 !important;
+            }
+
+            /* Page Breaks */
+            .break-inside-avoid {
+                break-inside: avoid;
+            }
+            h1, h2, h3 {
+                break-after: avoid;
+            }
+            /* Experience blocks */
+            .relative.group {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
     </style>
 <script type="importmap">
 {
