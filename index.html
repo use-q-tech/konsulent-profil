@@ -80,7 +80,6 @@
               <a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#roller">Roller</a>
               <a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#matrix">Matrix</a>
               <a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#profil">Profil</a>
-              <a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#leadership">Ledelse</a>
           </div>
 
           <button onclick="openCV()" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all shadow-sm hover:shadow-md flex items-center gap-2">
@@ -671,35 +670,17 @@
         <section class="w-full bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800" id="profil">
             <div class="max-w-5xl mx-auto px-6 py-24 flex flex-col gap-12">
             <div class="border-l-4 border-primary pl-6">
-                <h2 class="text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Konsulentprofil</h2>
+                <h2 id="main-profile-title" class="text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tight"></h2>
                 <div class="space-y-1 mt-2">
-                    <p class="text-lg text-slate-700 dark:text-slate-300 font-bold">Ledelse og styring i komplekse IT- og digitaliseringsinitiativer</p>
+                    <p id="main-profile-subtitle" class="text-lg text-slate-700 dark:text-slate-300 font-bold"></p>
                 </div>
             </div>
 
             <div class="grid lg:grid-cols-3 gap-8">
                 <!-- Profil Text -->
                 <div class="lg:col-span-2 space-y-8">
-                <div>
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-lg">
-                        Jeg arbejder i krydsfeltet mellem ledelse, IT og forretning og hjælper organisationer med at skabe klar styring og fremdrift, når IT- og digitaliseringsinitiativer bliver komplekse.
-                    </p>
-                    
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                        Med 20+ års erfaring fra IT og 10+ års erfaring med ledelse og governance bidrager jeg med prioritering, ledelsesmæssigt overblik og beslutningsunderstøttelse, så leverancer bliver forudsigelige og styrbare.
-                    </p>
-                    
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                        Jeg anvendes typisk, når leverancer er under pres, roller og snitflader er uklare, eller der mangler sammenhæng mellem forretningsmål og IT-leverancer. Her tager jeg ansvar for at skabe klar retning og struktur på tværs af organisationen.
-                    </p>
-
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                        Jeg forstår konsekvenserne af tekniske valg og kan udfordre arkitektur og teknisk gæld – uden selv at stå for implementering. Min rolle er ansvarsbærende, ledelsesmæssig og advisory.
-                    </p>
-                    
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
-                        Jeg har særlig erfaring fra offentlig sektor og regulerede miljøer, hvor jeg ofte fungerer som bindeled mellem ledelse, specialister og leverandører i komplekse forløb.
-                    </p>
+                <div id="main-profile-body">
+                   <!-- Content loaded via JS -->
                 </div>
 
                 <div>
@@ -877,7 +858,7 @@
         <!-- Footer -->
         <footer class="w-full bg-surface-light dark:bg-surface-dark border-t border-slate-200 dark:border-slate-800 py-8">
           <div class="max-w-5xl mx-auto px-6 text-center">
-            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-slate-500 dark:text-slate-400">
+            <div class="flex flex-col md:flex-row justify-center items-center text-sm text-slate-500 dark:text-slate-400">
               <p>© 2026 Qadeer Ashraf. Alle rettigheder forbeholdes.</p>
               <div class="flex gap-6 mt-4 md:mt-0">
                 <!-- <a class="hover:text-primary transition-colors" href="#">LinkedIn</a> -->
@@ -920,12 +901,10 @@
                             <!-- Header Info -->
                             <div class="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
                                 <div class="flex-1">
-                                    <h1 class="text-3xl font-black text-slate-900 dark:text-white mb-1">PROFESSIONEL PROFIL</h1>
-                                    <p class="text-lg text-primary font-bold mb-6">Strategisk og menneskefokuseret leder</p>
-                                    <div class="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 space-y-4">
-                                        <p>Jeg er en leder med passion for at udvikle stærke teams og kulturer, hvor samarbejde, retning og energi går hånd i hånd. Jeg trives, når jeg kan omsætte strategi til handling og skabe rammer, hvor mennesker lykkes sammen – med fokus på læring, trivsel og fælles ansvar.</p>
-                                        <p>Med en solid teknisk forståelse og organisatorisk indsigt har jeg ledet tværfaglige udviklingsteams og samarbejdet tæt med både forretning og leverandører. Jeg motiveres af at bygge bro mellem mennesker, skabe klar kommunikation og sikre alignment på tværs af organisationen.</p>
-                                        <p>Jeg er kendt for at skabe tillid gennem nærvær og tydelighed – og for at samle mennesker omkring fælles mål, hvor faglighed, samarbejde og læringskultur er drivkraften bag resultaterne</p>
+                                    <h1 id="modal-profile-title" class="text-3xl font-black text-slate-900 dark:text-white mb-1"></h1>
+                                    <p id="modal-profile-subtitle" class="text-lg text-primary font-bold mb-6"></p>
+                                    <div id="modal-profile-body" class="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 space-y-4">
+                                        <!-- Fetched from JS -->
                                     </div>
                                 </div>
                                 <!-- Profile Image Section -->
@@ -933,19 +912,6 @@
                                     <div class="w-40 h-40 md:w-48 md:h-48 rounded-2xl overflow-hidden shadow-tactile ring-4 ring-white dark:ring-slate-800 bg-surface-light dark:bg-surface-dark relative">
                                          <img class="w-full h-full object-cover object-top" alt="CV Profile Picture" src="./assets/images/cv-billed.jpeg" />
                                     </div>
-                                </div>
-                            </div>
-
-                            <!-- Description -->
-                            <div class="bg-white dark:bg-surface-dark p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm">
-                                <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-                                    <span class="material-symbols-outlined text-primary">person</span>
-                                    BESKRIVELSE AF MIG
-                                </h2>
-                                <div class="text-slate-600 dark:text-slate-300 space-y-3">
-                                    <p>Jeg er en udadvendt og nysgerrig person med en naturlig evne til at skabe relationer og samarbejde på tværs.</p>
-                                    <p>Jeg trives i miljøer, hvor videndeling, humor og fælles ansvar er en del af hverdagen, og jeg går til opgaver med både struktur og omtanke.</p>
-                                    <p>Jeg formidler viden på en klar og tilgængelig måde og værdsætter, når forskellige perspektiver mødes og bliver til fælles løsninger.</p>
                                 </div>
                             </div>
 
@@ -958,7 +924,7 @@
                                 <ul class="space-y-4 text-slate-600 dark:text-slate-300">
                                     <li class="flex gap-3">
                                         <span class="text-primary font-bold">📈</span>
-                                        <span>+10 års erfaring med ledelse inden for IT og digital udvikling – med fokus på teamopbygning, kultur og organisatorisk forankring.</span>
+                                        <span>10+ års erfaring med ledelse og governance inden for IT og digital udvikling, herunder teamopbygning, kultur og organisatorisk forankring – understøttet af 20+ års teknisk baggrund.</span>
                                     </li>
                                     <li class="flex gap-3">
                                         <span class="text-primary font-bold">🧑‍🤝‍🧑</span>
@@ -1199,24 +1165,48 @@
     </dialog>
 
     <script>
+        // Profile Data Source - Single Source of Truth
+        const profileData = {
+            title: "Konsulentprofil",
+            subtitle: "Ledelse og styring i komplekse IT- og digitaliseringsinitiativer",
+            paragraphs: [
+                "Jeg arbejder i krydsfeltet mellem ledelse, IT og forretning og hjælper organisationer med at skabe klar styring og fremdrift, når IT- og digitaliseringsinitiativer bliver komplekse.",
+                "Med 20+ års erfaring fra IT og 10+ års erfaring med ledelse og governance bidrager jeg med prioritering, ledelsesmæssigt overblik og beslutningsunderstøttelse, så leverancer bliver forudsigelige og styrbare.",
+                "Jeg anvendes typisk, når leverancer er under pres, roller og snitflader er uklare, eller der mangler sammenhæng mellem forretningsmål og IT-leverancer. Her tager jeg ansvar for at skabe klar retning og struktur på tværs af organisationen.",
+                "Jeg forstår konsekvenserne af tekniske valg og kan udfordre arkitektur og teknisk gæld – uden selv at stå for implementering. Min rolle er ansvarsbærende, ledelsesmæssig og advisory.",
+                "Jeg har særlig erfaring fra offentlig sektor og regulerede miljøer, hvor jeg ofte fungerer som bindeled mellem ledelse, specialister og leverandører i komplekse forløb."
+            ]
+        };
+
+        function renderProfile() {
+            // Render Main Page Profile
+            document.getElementById('main-profile-title').textContent = profileData.title;
+            document.getElementById('main-profile-subtitle').textContent = profileData.subtitle;
+            
+            const mainBody = document.getElementById('main-profile-body');
+            mainBody.innerHTML = profileData.paragraphs.map((p, index) => {
+                const textSize = index === 0 ? 'text-lg' : ''; // First paragraph larger on main page
+                return `<p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 ${textSize}">${p}</p>`;
+            }).join('');
+
+            // Render Modal Profile
+            document.getElementById('modal-profile-title').textContent = profileData.title;
+            document.getElementById('modal-profile-subtitle').textContent = profileData.subtitle;
+            
+            const modalBody = document.getElementById('modal-profile-body');
+            modalBody.innerHTML = profileData.paragraphs.map(p => {
+                return `<p>${p}</p>`; // Styles handled by parent .prose class
+            }).join('');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', renderProfile);
+        
+        // Modal logic
         const modal = document.getElementById('cv-modal');
-
-        function openCV() {
-            modal.showModal();
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-
-        function closeCV() {
-            modal.close();
-            document.body.style.overflow = ''; // Restore scrolling
-        }
-
-        // Close when clicking on backdrop
-        modal.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                closeCV();
-            }
-        });
+        function openCV() { modal.showModal(); document.body.style.overflow = 'hidden'; }
+        function closeCV() { modal.close(); document.body.style.overflow = ''; }
+        modal.addEventListener('click', (event) => { if (event.target === modal) closeCV(); });
     </script>
 
 </body>
