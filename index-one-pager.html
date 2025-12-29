@@ -41,10 +41,21 @@
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         
+        dialog[open] { animation: fadeIn 0.3s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        dialog::backdrop { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); }
+
         @media print {
             @page { margin: 1.5cm; size: auto; }
-            body > nav, body > footer { display: none !important; }
+            body > nav, body > main, body > footer, #cv-modal button { display: none !important; }
             body, html { height: auto !important; width: 100% !important; background-color: white !important; color: black !important; overflow: visible !important; }
+            dialog#cv-modal { display: block !important; position: relative !important; inset: 0 !important; width: 100% !important; height: auto !important; max-width: none !important; background: white !important; border: none !important; box-shadow: none !important; }
+            dialog#cv-modal::backdrop { background: none !important; }
+            #cv-modal .overflow-y-auto { overflow: visible !important; height: auto !important; }
+            img { -webkit-print-color-adjust: exact; print-color-adjust: exact; border: 1px solid #eee !important; }
             .bg-surface-light, .bg-background-light, .bg-blue-50, .bg-slate-50 { background-color: transparent !important; }
         }
     </style>
@@ -56,7 +67,6 @@
       }
     }
     </script>
-<link rel="stylesheet" href="/index.css">
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-600 dark:text-slate-300 font-display antialiased transition-colors duration-200 selection:bg-primary/15 selection:text-primary">
 
@@ -64,22 +74,23 @@
     <nav class="sticky top-0 z-50 w-full border-b border-slate-200/80 dark:border-slate-800 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md supports-[backdrop-filter]:bg-surface-light/60">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="flex h-20 items-center justify-between">
-          <a href="index.html" class="flex items-center gap-3 group cursor-pointer">
+          <div class="flex items-center gap-3 group cursor-pointer" onclick="window.scrollTo(0,0); return false;">
             <div class="size-9 rounded-xl bg-primary text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300">
               <span class="material-symbols-outlined">person</span>
             </div>
             <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-primary transition-colors">Qadeer Ashraf</span>
-          </a>
+          </div>
           
           <div class="hidden md:flex items-center gap-10">
-              <a class="text-sm font-bold text-primary dark:text-white transition-colors" href="index.html">Overblik</a>
-              <a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-white transition-colors" href="pitch.html">Pitch</a>
+              <a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-white transition-colors" href="#overblik">Overblik</a>
+              <a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-white transition-colors" href="#roller">Roller</a>
+              <a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-white transition-colors" href="#matrix">Matrix</a>
           </div>
 
-          <a href="cv.html" class="bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-all shadow-sm hover:shadow-md flex items-center gap-2 group">
+          <button onclick="openCV()" class="bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-all shadow-sm hover:shadow-md flex items-center gap-2 group">
             <span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">visibility</span>
             Se fuldt CV
-          </a>
+          </button>
         </div>
       </div>
     </nav>
@@ -901,6 +912,111 @@
             <p class="text-slate-500 dark:text-slate-400 text-sm">© 2024 Qadeer Ashraf. All rights reserved.</p>
         </div>
     </footer>
-<script type="module" src="/index.tsx"></script>
+
+    <!-- CV Modal -->
+    <dialog id="cv-modal" class="w-full max-w-5xl h-[90vh] rounded-2xl bg-white dark:bg-surface-dark shadow-2xl backdrop:bg-slate-900/50 p-0 overflow-hidden">
+        <div class="flex flex-col h-full">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between p-6 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 sticky top-0 z-10">
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">description</span>
+                    CV - Qadeer Ashraf
+                </h2>
+                <div class="flex items-center gap-2">
+                     <button onclick="window.print()" class="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg text-slate-600 dark:text-slate-300 transition-colors" title="Print">
+                        <span class="material-symbols-outlined">print</span>
+                    </button>
+                    <button onclick="closeCV()" class="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg text-slate-600 dark:text-slate-300 transition-colors">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Modal Content -->
+            <div class="overflow-y-auto p-8 lg:p-12 bg-white text-slate-800">
+                <div class="lg:grid lg:grid-cols-3 gap-12">
+                    <!-- Sidebar -->
+                    <div class="space-y-8">
+                         <div>
+                            <h3 class="text-sm font-bold uppercase text-slate-400 tracking-wider mb-4">Kontakt</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-center gap-3"><span class="material-symbols-outlined text-slate-400">location_on</span> København, Danmark</li>
+                                <li class="flex items-center gap-3"><span class="material-symbols-outlined text-slate-400">mail</span> kontakt@qadeer.dk</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold uppercase text-slate-400 tracking-wider mb-4">Kernekompetencer</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-slate-100 rounded text-xs font-medium text-slate-700">Agile Leadership</span>
+                                <span class="px-2 py-1 bg-slate-100 rounded text-xs font-medium text-slate-700">SAFe / RTE</span>
+                                <span class="px-2 py-1 bg-slate-100 rounded text-xs font-medium text-slate-700">IT Management</span>
+                                <span class="px-2 py-1 bg-slate-100 rounded text-xs font-medium text-slate-700">Change Mgmt</span>
+                                <span class="px-2 py-1 bg-slate-100 rounded text-xs font-medium text-slate-700">Stakeholder Mgmt</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="lg:col-span-2 space-y-10">
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-6 border-b pb-2">Erhvervserfaring</h3>
+                            <div class="space-y-8 border-l-2 border-slate-200 pl-8 relative">
+                                <!-- Experience Item 1 -->
+                                <div class="relative group">
+                                    <div class="absolute -left-[39px] top-1 size-5 rounded-full bg-white border-4 border-primary"></div>
+                                    <div class="mb-1">
+                                        <span class="text-sm font-bold text-primary uppercase tracking-wide">Nuværende</span>
+                                    </div>
+                                    <h4 class="text-lg font-bold text-slate-900">Senior IT Consultant & Agile Lead</h4>
+                                    <p class="text-slate-600 mb-4">Freelance / Selvstændig</p>
+                                    <p class="text-slate-700 leading-relaxed text-sm">
+                                        Rådgivning og eksekvering i komplekse agile transformationer. Fokus på RTE-roller, leveranceledelse og teknisk advisory.
+                                    </p>
+                                </div>
+                                <!-- Experience Item 2 -->
+                                <div class="relative group">
+                                    <div class="absolute -left-[39px] top-1 size-5 rounded-full bg-white border-4 border-slate-300"></div>
+                                    <div class="mb-1">
+                                        <span class="text-sm font-bold text-slate-400 uppercase tracking-wide">2018 - 2023</span>
+                                    </div>
+                                    <h4 class="text-lg font-bold text-slate-900">Senior Delivery Manager</h4>
+                                    <p class="text-slate-600 mb-4">Større Dansk IT-organisation</p>
+                                    <p class="text-slate-700 leading-relaxed text-sm">
+                                        Ansvarlig for leverance på tværs af 8 teams. Etablering af ART og governance-strukturer.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-6 border-b pb-2">Uddannelse</h3>
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="text-lg font-bold text-slate-900">Master / Kandidatgrad i IT</h4>
+                                    <p class="text-slate-600">Universitet / Handelshøjskole</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <script>
+        function openCV() {
+            document.getElementById('cv-modal').showModal();
+        }
+        function closeCV() {
+            document.getElementById('cv-modal').close();
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('cv-modal').addEventListener('click', (event) => {
+            if (event.target.id === 'cv-modal') {
+                closeCV();
+            }
+        });
+    </script>
 </body>
 </html>

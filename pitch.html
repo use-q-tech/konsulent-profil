@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="da">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Pitch - Qadeer Ashraf</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0f62fe",
+                        "primary-dark": "#0043ce",
+                        "background-light": "#f8f9fc",
+                        "background-dark": "#111921",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a242f",
+                        "subtle-light": "#f2f4f8",
+                        "subtle-dark": "#16202a",
+                    },
+                    boxShadow: {
+                        'tactile': '0 2px 8px rgba(0,0,0,0.04), 0 0 2px rgba(0,0,0,0.02)',
+                        'tactile-hover': '0 0 30px rgba(0, 0, 0, 0.1)',
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-600 dark:text-slate-300 font-display antialiased transition-colors duration-200 selection:bg-primary/15 selection:text-primary">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 w-full border-b border-slate-200/80 dark:border-slate-800 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md supports-[backdrop-filter]:bg-surface-light/60">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex h-20 items-center justify-between">
+          <a href="index.html" class="flex items-center gap-3 group cursor-pointer">
+            <div class="size-9 rounded-xl bg-primary text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300">
+              <span class="material-symbols-outlined">person</span>
+            </div>
+            <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-primary transition-colors">Qadeer Ashraf</span>
+          </a>
+          
+          <div class="hidden md:flex items-center gap-10">
+              <a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-white transition-colors" href="index.html">Overblik</a>
+              <a class="text-sm font-bold text-primary dark:text-white transition-colors" href="pitch.html">Pitch</a>
+          </div>
+
+          <a href="cv.html" class="bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-all shadow-sm hover:shadow-md flex items-center gap-2 group">
+            <span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">visibility</span>
+            Se fuldt CV
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="w-full flex flex-col items-center">
+        
+        <!-- 1. HERO SECTION (Kopi af Overblik) -->
+        <section class="w-full bg-primary border-b border-white/10" id="hero">
+            <div class="max-w-6xl mx-auto px-6 py-20 lg:py-32">
+                
+                <div class="flex flex-col-reverse lg:flex-row gap-16 items-start lg:items-center">
+                    <div class="flex-1 space-y-8">
+                        <div class="inline-flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 rounded-xl bg-white/10 px-4 py-3 text-sm text-blue-50 ring-1 ring-inset ring-white/40 backdrop-blur-sm max-w-3xl shadow-sm">
+                            <div class="flex items-center gap-2 shrink-0">
+                                <span class="material-symbols-outlined text-[20px] text-white">info</span>
+                                <span class="font-bold text-white uppercase tracking-wider whitespace-nowrap">FOR KONSULENTHUSE</span>
+                            </div>
+                            <span class="hidden sm:inline w-px h-4 bg-white/30"></span>
+                            <span class="font-normal opacity-90">Dette site er udarbejdet som et forståelsesgrundlag for korrekt positionering af min profil – ikke som en traditionel salgsprofil.</span>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <h1 class="text-5xl lg:text-7xl font-bold tracking-tight leading-tight text-white">
+                                Senior IT- og leveranceleder i komplekse agile organisationer
+                            </h1>
+                            <p class="text-xl lg:text-2xl font-normal text-blue-100 leading-snug max-w-3xl">
+                                Jeg arbejder i krydsfeltet mellem IT, ledelse og forretning og skaber struktur, beslutningskraft og forudsigelighed i komplekse IT- og digitaliseringsinitiativer.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-6 pt-2">
+                            <div class="flex items-center gap-2.5 text-sm font-medium text-blue-100">
+                                <span class="material-symbols-outlined text-[20px] opacity-80">location_on</span>
+                                København, Danmark
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative shrink-0">
+                        <div class="w-56 h-56 lg:w-72 lg:h-72 rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/10 bg-surface-light dark:bg-surface-dark transition-transform hover:scale-[1.02] duration-700 ease-out">
+                            <img class="w-full h-full object-cover" alt="Professional headshot" src="./assets/images/cv-billed.jpeg" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Placeholder Section 1 (Hvid) -->
+        <section class="w-full bg-surface-light dark:bg-surface-dark border-b border-slate-100 dark:border-slate-800">
+            <div class="max-w-6xl mx-auto px-6 py-24">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-6">
+                        <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Placeholder Overskrift</h2>
+                        <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Her kan du indsætte tekst, der beskriver din pitch, dine ydelser eller en specifik case. Designet er klar til indhold.
+                        </p>
+                        <ul class="space-y-3 pt-4">
+                            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-200"><span class="material-symbols-outlined text-primary">check_circle</span> Fordel nummer et</li>
+                            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-200"><span class="material-symbols-outlined text-primary">check_circle</span> Fordel nummer to</li>
+                            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-200"><span class="material-symbols-outlined text-primary">check_circle</span> Fordel nummer tre</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-100 dark:bg-slate-800 rounded-3xl h-80 flex items-center justify-center border border-slate-200 dark:border-slate-700">
+                        <span class="text-slate-400 font-medium">Placeholder Billede / Grafik</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Placeholder Section 2 (Grå) -->
+        <section class="w-full bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800">
+             <div class="max-w-4xl mx-auto px-6 py-24 text-center">
+                <span class="inline-block p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl text-primary mb-6">
+                    <span class="material-symbols-outlined text-[32px]">lightbulb</span>
+                </span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-6">
+                    "Her er plads til et centralt budskab eller citat."
+                </h2>
+                <p class="text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
+                    Dette område er velegnet til at fremhæve din tilgang, din værdi eller en afsluttende bemærkning i din pitch.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-surface-light dark:bg-surface-dark border-t border-slate-200 dark:border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-slate-500 dark:text-slate-400 text-sm">© 2024 Qadeer Ashraf. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

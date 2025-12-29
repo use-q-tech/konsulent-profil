@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="da">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>CV - Qadeer Ashraf</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0f62fe",
+                        "primary-dark": "#0043ce",
+                        "background-light": "#f8f9fc",
+                        "background-dark": "#111921",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a242f",
+                        "subtle-light": "#f2f4f8",
+                        "subtle-dark": "#16202a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        
+        @media print {
+            @page { margin: 1cm; size: auto; }
+            body { background-color: white !important; }
+            nav, footer, .print-hidden { display: none !important; }
+            main { padding: 0 !important; }
+            .cv-paper { box-shadow: none !important; border: none !important; margin: 0 !important; max-width: 100% !important; border-radius: 0 !important; }
+            /* Ensure background colors for timeline dots print correctly */
+            .print:bg-primary { background-color: #0f62fe !important; -webkit-print-color-adjust: exact; }
+            .print:border-primary { border-color: #0f62fe !important; -webkit-print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body class="bg-subtle-light dark:bg-background-dark text-slate-600 dark:text-slate-300 font-display antialiased transition-colors duration-200 selection:bg-primary/15 selection:text-primary">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 w-full border-b border-slate-200/80 dark:border-slate-800 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md supports-[backdrop-filter]:bg-surface-light/60 print-hidden">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex h-20 items-center justify-between">
+          <a href="index.html" class="flex items-center gap-3 group cursor-pointer">
+            <div class="size-9 rounded-xl bg-primary text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300">
+              <span class="material-symbols-outlined">person</span>
+            </div>
+            <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-primary transition-colors">Qadeer Ashraf</span>
+          </a>
+          
+          <div class="hidden md:flex items-center gap-10">
+              <a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-white transition-colors" href="index.html">Overblik</a>
+              <a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-white transition-colors" href="pitch.html">Pitch</a>
+          </div>
+
+          <a href="cv.html" class="bg-primary-dark text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-all shadow-md flex items-center gap-2 cursor-default">
+            <span class="material-symbols-outlined text-[20px]">visibility</span>
+            Se fuldt CV
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="w-full py-12 px-4 print:p-0">
+        
+        <!-- CV PAPER -->
+        <div class="cv-paper max-w-5xl mx-auto bg-white dark:bg-surface-dark rounded-2xl shadow-xl overflow-hidden border border-slate-200/50 dark:border-slate-800">
+            
+            <!-- Header inside paper -->
+            <div class="flex items-center justify-between p-8 border-b border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/30">
+                <div class="flex items-center gap-4">
+                    <div class="size-16 rounded-xl bg-slate-200 dark:bg-slate-700 overflow-hidden hidden sm:block">
+                        <img src="./assets/images/cv-billed.jpeg" alt="Qadeer Ashraf" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-bold text-slate-900 dark:text-white">Qadeer Ashraf</h1>
+                        <p class="text-lg text-primary font-medium">Senior IT- & Leveranceleder</p>
+                    </div>
+                </div>
+                <button onclick="window.print()" class="print-hidden flex items-center gap-2 px-4 py-2 rounded-lg bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-600 transition-colors shadow-sm">
+                    <span class="material-symbols-outlined text-[18px]">print</span>
+                    Print
+                </button>
+            </div>
+
+            <!-- Content Area -->
+            <div class="p-8 lg:p-12">
+                <div class="lg:grid lg:grid-cols-12 gap-12">
+                    
+                    <!-- LEFT COLUMN (Sidebar info) -->
+                    <div class="lg:col-span-4 space-y-10">
+                         
+                         <!-- Kontakt -->
+                         <div>
+                            <h3 class="text-xs font-bold uppercase text-slate-400 tracking-widest mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[18px]">contacts</span> Kontakt
+                            </h3>
+                            <ul class="space-y-3 text-sm font-medium text-slate-700 dark:text-slate-300">
+                                <li class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-slate-400">location_on</span>
+                                    København, Danmark
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-slate-400">mail</span>
+                                    kontakt@qadeer.dk
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-slate-400">call</span>
+                                    +45 XX XX XX XX
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-slate-400">link</span>
+                                    <a href="#" class="hover:text-primary transition-colors">LinkedIn Profil</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Metoder & Kompetencer -->
+                        <div>
+                            <h3 class="text-xs font-bold uppercase text-slate-400 tracking-widest mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[18px]">psychology</span> Kompetencer
+                            </h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Agile Leadership</span>
+                                <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">SAFe / RTE</span>
+                                <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">IT Management</span>
+                                <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Change Mgmt</span>
+                                <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Stakeholder Mgmt</span>
+                                <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Programledelse</span>
+                                <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Scrum & Kanban</span>
+                            </div>
+                        </div>
+
+                        <!-- Certificeringer -->
+                        <div>
+                            <h3 class="text-xs font-bold uppercase text-slate-400 tracking-widest mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[18px]">verified</span> Certificeringer
+                            </h3>
+                            <ul class="space-y-3">
+                                <li class="text-sm">
+                                    <div class="font-bold text-slate-800 dark:text-slate-200">SAFe® Release Train Engineer</div>
+                                    <div class="text-slate-500 text-xs">Scaled Agile, Inc.</div>
+                                </li>
+                                <li class="text-sm">
+                                    <div class="font-bold text-slate-800 dark:text-slate-200">Certified Scrum Master (CSM)</div>
+                                    <div class="text-slate-500 text-xs">Scrum Alliance</div>
+                                </li>
+                                <li class="text-sm">
+                                    <div class="font-bold text-slate-800 dark:text-slate-200">PRINCE2® Practitioner</div>
+                                    <div class="text-slate-500 text-xs">Axelos</div>
+                                </li>
+                                <li class="text-sm">
+                                    <div class="font-bold text-slate-800 dark:text-slate-200">ITIL® Foundation</div>
+                                    <div class="text-slate-500 text-xs">Axelos</div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Sprog -->
+                        <div>
+                            <h3 class="text-xs font-bold uppercase text-slate-400 tracking-widest mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[18px]">language</span> Sprog
+                            </h3>
+                            <ul class="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+                                <li class="flex justify-between"><span>Dansk</span> <span class="text-slate-400">Modersmål</span></li>
+                                <li class="flex justify-between"><span>Engelsk</span> <span class="text-slate-400">Forhandlingsniveau</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN (Main Content) -->
+                    <div class="lg:col-span-8 space-y-12">
+                        
+                        <!-- Profiltekst -->
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2 pb-2 border-b border-slate-200 dark:border-slate-700">
+                                <span class="material-symbols-outlined text-primary">person</span> Profil
+                            </h3>
+                            <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+                                Erfaren Senior IT-konsulent og leder med over 20 års erfaring i spændingsfeltet mellem teknologi, forretning og ledelse. Jeg har en stærk track record i at drive komplekse agile transformationer, etablere velfungerende Release Trains (ARTs) og sikre leverancekraft i store organisationer.
+                            </p>
+                            <p class="text-slate-700 dark:text-slate-300 leading-relaxed mt-4">
+                                Min styrke ligger i at kombinere dyb teknisk forståelse med strategisk overblik, hvilket gør mig i stand til at bygge bro mellem udviklingsteams og topledelse. Jeg navigerer hjemmevant i regulerede miljøer og har omfattende erfaring fra både offentlig og privat sektor.
+                            </p>
+                        </div>
+
+                        <!-- Erhvervserfaring -->
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2 pb-2 border-b border-slate-200 dark:border-slate-700">
+                                <span class="material-symbols-outlined text-primary">work</span> Erhvervserfaring
+                            </h3>
+                            
+                            <div class="space-y-10 border-l-2 border-slate-200 dark:border-slate-700 pl-8 relative">
+                                
+                                <!-- Experience Item 1 -->
+                                <div class="relative group">
+                                    <div class="absolute -left-[39px] top-1.5 size-5 rounded-full bg-white dark:bg-surface-dark border-4 border-primary shadow-sm print:bg-primary print:border-primary"></div>
+                                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">Senior IT Consultant & Agile Lead</h4>
+                                        <span class="text-sm font-bold text-primary bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded">Nuværende</span>
+                                    </div>
+                                    <p class="text-slate-600 dark:text-slate-400 font-medium mb-3">Freelance / Selvstændig</p>
+                                    <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-3">
+                                        Rådgivning og eksekvering i komplekse agile transformationer hos større danske virksomheder. Fokus på RTE-roller, leveranceledelse og teknisk advisory.
+                                    </p>
+                                    <ul class="list-disc list-outside ml-4 text-sm text-slate-700 dark:text-slate-300 space-y-1 marker:text-slate-400">
+                                        <li>Etablering og facilitering af Agile Release Trains (ART).</li>
+                                        <li>Rådgivning af ledelse omkring governance og porteføljestyring.</li>
+                                        <li>Optimering af flow og leveranceprocesser på tværs af teams.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Experience Item 2 -->
+                                <div class="relative group">
+                                    <div class="absolute -left-[39px] top-1.5 size-5 rounded-full bg-white dark:bg-surface-dark border-4 border-slate-300 dark:border-slate-600"></div>
+                                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">Senior Delivery Manager</h4>
+                                        <span class="text-sm font-medium text-slate-500">2018 - 2023</span>
+                                    </div>
+                                    <p class="text-slate-600 dark:text-slate-400 font-medium mb-3">Større Dansk IT-organisation (Placeholder)</p>
+                                    <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-3">
+                                        Ansvarlig for leverance på tværs af 8 teams med +80 medarbejdere. Implementerede SAFe-principper og øgede leverancehastigheden markant.
+                                    </p>
+                                    <ul class="list-disc list-outside ml-4 text-sm text-slate-700 dark:text-slate-300 space-y-1 marker:text-slate-400">
+                                        <li>Personaleledelse af Scrum Masters og Product Owners.</li>
+                                        <li>Ansvarlig for budget, ressourceallokering og leverandørstyring.</li>
+                                        <li>Succesfuld migrering af legacy-systemer til cloud-platform.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Experience Item 3 -->
+                                <div class="relative group">
+                                    <div class="absolute -left-[39px] top-1.5 size-5 rounded-full bg-white dark:bg-surface-dark border-4 border-slate-300 dark:border-slate-600"></div>
+                                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">Senior Project Manager</h4>
+                                        <span class="text-sm font-medium text-slate-500">2014 - 2018</span>
+                                    </div>
+                                    <p class="text-slate-600 dark:text-slate-400 font-medium mb-3">Konsulenthus / Offentlig Kunde (Placeholder)</p>
+                                    <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-3">
+                                        Ledelse af store digitaliseringsprojekter i den offentlige sektor med høje krav til compliance og sikkerhed.
+                                    </p>
+                                    <ul class="list-disc list-outside ml-4 text-sm text-slate-700 dark:text-slate-300 space-y-1 marker:text-slate-400">
+                                        <li>Projektledelse fra analyse til implementering og drift.</li>
+                                        <li>Stakeholder management på direktionsniveau.</li>
+                                        <li>Sikring af overholdelse af GDPR og IT-sikkerhedskrav.</li>
+                                    </ul>
+                                </div>
+
+                                 <!-- Experience Item 4 -->
+                                <div class="relative group">
+                                    <div class="absolute -left-[39px] top-1.5 size-5 rounded-full bg-white dark:bg-surface-dark border-4 border-slate-300 dark:border-slate-600"></div>
+                                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                                        <h4 class="text-lg font-bold text-slate-900 dark:text-white">IT Projektleder / Udvikler</h4>
+                                        <span class="text-sm font-medium text-slate-500">2008 - 2014</span>
+                                    </div>
+                                    <p class="text-slate-600 dark:text-slate-400 font-medium mb-3">Forskellige virksomheder</p>
+                                    <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                                        Teknisk funderet rolle med fokus på systemudvikling, arkitektur og senere projektledelse.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Uddannelse -->
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2 pb-2 border-b border-slate-200 dark:border-slate-700">
+                                <span class="material-symbols-outlined text-primary">school</span> Uddannelse
+                            </h3>
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="flex justify-between items-baseline mb-1">
+                                        <h4 class="text-base font-bold text-slate-900 dark:text-white">Master / Kandidatgrad i IT (Cand.IT/Datalogi)</h4>
+                                        <span class="text-sm text-slate-500">Årstal</span>
+                                    </div>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm">Universitet / Handelshøjskole</p>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between items-baseline mb-1">
+                                        <h4 class="text-base font-bold text-slate-900 dark:text-white">Bachelor i Datalogi / Softwareudvikling</h4>
+                                        <span class="text-sm text-slate-500">Årstal</span>
+                                    </div>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm">Universitet / Handelshøjskole</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-surface-light dark:bg-surface-dark border-t border-slate-200 dark:border-slate-800 py-12 print-hidden">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-slate-500 dark:text-slate-400 text-sm">© 2024 Qadeer Ashraf. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
