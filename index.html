@@ -74,6 +74,24 @@
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // CENTRAL PROFILE TEXT DATA
+            // This ensures the text is identical in both "Pitch" and "CV" views.
+            const profileContent = `
+                <p>Jeg arbejder i krydsfeltet mellem ledelse, IT og forretning og hjælper organisationer med at skabe klar styring og fremdrift, når IT- og digitaliseringsinitiativer bliver komplekse.</p>
+                <p>Med 20+ års erfaring fra IT og 10+ års erfaring med ledelse og governance bidrager jeg med prioritering, ledelsesmæssigt overblik og beslutningsunderstøttelse, så leverancer bliver mere forudsigelige og styrbare.</p>
+                <p>Jeg anvendes typisk, når leverancer er under pres, roller og snitflader er uklare, eller der mangler sammenhæng mellem forretningsmål og IT-leverancer. Her tager jeg ansvar for at skabe klar retning og struktur på tværs af organisationen.</p>
+                <p>Jeg forstår konsekvenserne af tekniske valg og kan udfordre arkitektur og teknisk gæld – uden selv at stå for implementering. Min rolle er ansvarsbærende, ledelsesmæssig og advisory.</p>
+                <p>Jeg har særlig erfaring fra offentlig sektor og regulerede miljøer, hvor jeg ofte fungerer som bindeled mellem ledelse, specialister og leverandører i komplekse forløb.</p>
+            `;
+
+            // Inject profile content into containers
+            const pitchProfileContainer = document.getElementById('pitch-profile-text');
+            if (pitchProfileContainer) pitchProfileContainer.innerHTML = profileContent;
+
+            const cvProfileContainer = document.getElementById('cv-profile-text');
+            if (cvProfileContainer) cvProfileContainer.innerHTML = profileContent;
+
+
             function router() {
                 // Get hash or default to 'overblik'
                 let hash = window.location.hash.replace('#', '');
@@ -169,18 +187,20 @@
                     
                     <div class="flex flex-col-reverse lg:flex-row gap-10 lg:gap-16 items-start lg:items-center">
                         <div class="flex-1 space-y-6 lg:space-y-8">
-                            <div class="inline-flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 rounded-xl bg-white/10 px-4 py-3 text-sm text-blue-50 ring-1 ring-inset ring-white/40 backdrop-blur-sm max-w-3xl shadow-sm">
+                            <!-- UPDATED: Added min-height classes to badge -->
+                            <div class="min-h-[7.5rem] sm:min-h-[4rem] inline-flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 rounded-xl bg-white/10 px-4 py-3 text-sm text-blue-50 ring-1 ring-inset ring-white/40 backdrop-blur-sm max-w-3xl shadow-sm">
                                 <div class="flex items-center gap-2 shrink-0">
                                     <span class="material-symbols-outlined text-[20px] text-white">info</span>
                                     <span class="font-bold text-white uppercase tracking-wider whitespace-nowrap">FOR KONSULENTHUSE</span>
                                 </div>
                                 <span class="hidden sm:inline w-px h-4 bg-white/30"></span>
-                                <span class="font-normal opacity-90 leading-snug">Dette site er udarbejdet som et forståelsesgrundlag for korrekt positionering af min profil – ikke som en traditionel salgsprofil.</span>
+                                <span class="font-normal opacity-90 leading-snug">Udarbejdet som et forståelsesgrundlag for korrekt positionering af min profil</span>
                             </div>
                             
-                            <div class="space-y-4 lg:space-y-6">
+                            <div class="space-y-4 lg:space-y-6 lg:min-h-[320px]">
+                                <!-- UPDATED TITLE: Removed "komplekse" -->
                                 <h1 class="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-tight text-white drop-shadow-sm">
-                                    Senior IT- og leveranceleder i komplekse agile organisationer
+                                    Senior IT- og leveranceleder i agile organisationer
                                 </h1>
                                 <p class="text-lg lg:text-2xl font-normal text-blue-100 leading-snug max-w-3xl">
                                     Jeg arbejder i krydsfeltet mellem IT, ledelse og forretning og skaber struktur, beslutningskraft og forudsigelighed i komplekse IT- og digitaliseringsinitiativer.
@@ -586,7 +606,7 @@
                                 Formål
                             </h3>
                             <p class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
-                                Denne sektion giver et praktisk overblik over, hvordan profilen typisk bringes i spil i konsulentopgaver. Formålet er at understøtte korrekt match, tydelig forventningsafstemning og lav risiko for fejlplacering.
+                                Denne matrix er et internt værktøj for konsulenthuse og brokers. Den beskriver, hvornår profilen er et godt match – og hvornår den ikke er det. Formålet er korrekt positionering og risikominimering, ikke salgsargumentation.
                             </p>
                             <div class="pt-3 border-t border-slate-200/60 dark:border-slate-700/50">
                                 <p class="text-sm text-slate-700 dark:text-slate-300 font-medium">Sektionen er opbygget i tre niveauer, som tilsammen giver både hurtig scanning og grundig afklaring.</p>
@@ -966,7 +986,19 @@
                     <div class="flex flex-col-reverse lg:flex-row gap-10 lg:gap-16 items-start lg:items-center">
                         <div class="flex-1 space-y-6 lg:space-y-8">
                             
-                            <div class="space-y-4 lg:space-y-6">
+                            <!-- INFO BOX ADDED HERE -->
+                            <!-- UPDATED: Added min-height classes to badge -->
+                            <div class="min-h-[7.5rem] sm:min-h-[4rem] inline-flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 rounded-xl bg-white/10 px-4 py-3 text-sm text-blue-50 ring-1 ring-inset ring-white/40 backdrop-blur-sm max-w-3xl shadow-sm">
+                                <div class="flex items-center gap-2 shrink-0">
+                                    <span class="material-symbols-outlined text-[20px] text-white">info</span>
+                                    <span class="font-bold text-white uppercase tracking-wider whitespace-nowrap">FOR KUNDER</span>
+                                </div>
+                                <span class="hidden sm:inline w-px h-4 bg-white/30"></span>
+                                <span class="font-normal opacity-90 leading-snug">Pitch</span>
+                            </div>
+
+                            <!-- UPDATED: Added min-height for layout stability -->
+                            <div class="space-y-4 lg:space-y-6 lg:min-h-[320px]">
                                 <h1 class="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-tight text-white drop-shadow-sm">
                                     Ledelse og styring i komplekse IT- og digitaliseringsinitiativer
                                 </h1>
@@ -1009,13 +1041,9 @@
                             
                             <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">Ledelse og styring i komplekse IT- og digitaliseringsinitiativer</h3>
                             
-                            <!-- Prose text with standardized styling -->
-                            <div class="space-y-4 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-                                <p>Jeg arbejder i krydsfeltet mellem ledelse, IT og forretning og hjælper organisationer med at skabe klar styring og fremdrift, når IT- og digitaliseringsinitiativer bliver komplekse.</p>
-                                <p>Med 20+ års erfaring fra IT og 10+ års erfaring med ledelse og governance bidrager jeg med prioritering, ledelsesmæssigt overblik og beslutningsunderstøttelse, så leverancer bliver mere forudsigelige og styrbare.</p>
-                                <p>Jeg anvendes typisk, når leverancer er under pres, roller og snitflader er uklare, eller der mangler sammenhæng mellem forretningsmål og IT-leverancer. Her tager jeg ansvar for at skabe klar retning og struktur på tværs af organisationen.</p>
-                                <p>Jeg forstår konsekvenserne af tekniske valg og kan udfordre arkitektur og teknisk gæld – uden selv at stå for implementering. Min rolle er ansvarsbærende, ledelsesmæssig og advisory.</p>
-                                <p>Jeg har særlig erfaring fra offentlig sektor og regulerede miljøer, hvor jeg ofte fungerer som bindeled mellem ledelse, specialister og leverandører i komplekse forløb.</p>
+                            <!-- Prose text container - content injected via JS -->
+                            <div id="pitch-profile-text" class="space-y-4 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                                <!-- Content injected via Javascript -->
                             </div>
                         </div>
 
@@ -1226,12 +1254,9 @@
                                     </div>
                                 </div>
                                 
-                                <div class="max-w-3xl prose prose-lg prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300">
-                                    <p>Jeg arbejder i krydsfeltet mellem ledelse, IT og forretning og hjælper organisationer med at skabe klar styring og fremdrift, når IT- og digitaliseringsinitiativer bliver komplekse.</p>
-                                    <p>Med 20+ års erfaring fra IT og 10+ års erfaring med ledelse og governance bidrager jeg med prioritering, ledelsesmæssigt overblik og beslutningsunderstøttelse, så leverancer bliver mere forudsigelige og styrbare.</p>
-                                    <p>Jeg anvendes typisk, når leverancer er under pres, roller og snitflader er uklare, eller der mangler sammenhæng mellem forretningsmål og IT-leverancer. Her tager jeg ansvar for at skabe klar retning og struktur på tværs af organisationen.</p>
-                                    <p>Jeg forstår konsekvenserne af tekniske valg og kan udfordre arkitektur og teknisk gæld – uden selv at stå for implementering. Min rolle er ansvarsbærende, ledelsesmæssig og advisory.</p>
-                                    <p>Jeg har særlig erfaring fra offentlig sektor og regulerede miljøer, hvor jeg ofte fungerer som bindeled mellem ledelse, specialister og leverandører i komplekse forløb.</p>
+                                <!-- Profile Text Container - Content injected via JS -->
+                                <div id="cv-profile-text" class="max-w-3xl space-y-4 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                                   <!-- Content injected via Javascript -->
                                 </div>
                             </div>
 
@@ -1410,13 +1435,14 @@
                                     </li>
                                     <li class="flex items-center gap-3">
                                         <span class="material-symbols-outlined text-slate-400">mail</span>
-                                        kontakt@qadeer.dk
+                                        Qashraf@gmail.com
                                     </li>
                                     <li class="flex items-center gap-3">
                                         <span class="material-symbols-outlined text-slate-400">call</span>
-                                        +45 XX XX XX XX
+                                        +45 27 83 86 89
                                     </li>
-                                    <li class="flex items-center gap-3">
+                                    <!-- UPDATED: Added hidden class to hide linkedin for now -->
+                                    <li class="hidden flex items-center gap-3">
                                         <span class="material-symbols-outlined text-slate-400">link</span>
                                         <a href="#" class="hover:text-primary transition-colors">LinkedIn Profil</a>
                                     </li>
@@ -1512,7 +1538,7 @@
 
     <footer class="bg-surface-light dark:bg-surface-dark border-t border-slate-200 dark:border-slate-800 py-12 print-hidden">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-slate-500 dark:text-slate-400 text-sm">© 2024 Qadeer Ashraf. All rights reserved.</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm">© 2026 Qadeer Ashraf. All rights reserved.</p>
         </div>
     </footer>
 </body>
